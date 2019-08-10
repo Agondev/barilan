@@ -26,7 +26,7 @@ class _GradesViewState extends State<GradesView> {
 
     SchedulerBinding.instance.addPostFrameCallback((_) =>
         _scrollController.animateTo(_scrollController.position.maxScrollExtent,
-            curve: Curves.linear, duration: Duration(microseconds: 1)));
+            curve: Curves.linear, duration: Duration.zero));
   }
 
   @override
