@@ -1,3 +1,1467 @@
+String exams2020 = r'''
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; https://www.google.com/recaptcha/; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; https://www.google.com/recaptcha/  https://www.gstatic.com/recaptcha/; style-src &#39;self&#39; &#39;unsafe-inline&#39;;img-src &#39;self&#39; data:" /><link href="App_Themes/default/accessibilityTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/animateTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/font-awesomeTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/styleV2Tue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/xstyleTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><title>
+	לוח בחינות
+</title>
+<meta name="viewport" content="width=device-width" /><link rel="icon" href="data:;base64,iVBORw0KGgo=" /><style type="text/css">
+	.tvMain_0 { text-decoration:none; }
+
+</style></head>
+<body dir="rtl" onbeforeunload="ShowWaiting();">
+    <div>
+        <form method="post" action="./StudentAssignmentTermList.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="tvMain_ExpandState" id="tvMain_ExpandState" value="nunnunnennnnnunnnnnunununnnnnnnn" />
+<input type="hidden" name="tvMain_SelectedNode" id="tvMain_SelectedNode" value="tvMainn8" />
+<input type="hidden" name="__PageDataKey" id="__PageDataKey" value="VIEWSTATE_DATA_S_jmiqh5s05nzupu1s4zp23w3i_L0xpdmUvU3R1ZGVudEFzc2lnbm1lbnRUZXJtTGlzdC5hc3B4_637074894240902123" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Live/WebResource.axd?d=LaYn3burdyVmW1N3AkFdyOBz8MlXKtWxmI2YQoSD5bR6PXjAdLxbT_zysmNeLPLG6G3R3rl7BgW21cC0L6o2kB-Tnc1IGVwq--YGFn2IC2g1&amp;t=636768548402700171" type="text/javascript"></script>
+
+
+<script src="/Live/WebResource.axd?d=dGOpdboWAsWO75ANPXBQIbY8m_rNVTIwktmEbs9Ajm1N9EN4hPQ8VQweRUuQVC9rN3eycYxhAhk2a-dozhiCeAHUroXpEhbwXlhDd2B_kB-MLmCrv_MFx1arh10ZuAoAM8zUfc3JvbNML_FfOyvCvw2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=maA3ogMNFT_BHg_vTAsbu5NjEeAmB-sPMI0-1g3JYpOwrGJ8n24JiJky7F-n95YEbIRTSywklRMG10emHuf1CvKVopmkfrp0Z-kd4r1f998eF0serUoyV4v1OygRNZDWd2xIwGFroGpTeuk9n817-w2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=vYyuaxh7RmK8rDw8Y_230mOOKtkB0gfrpREuItjPpydtV00i7n3VTs13YSedMZ_1ds5X05yHBhLR18Eum73x7D9_pv4GSwUyC1OUG9cFsqneL8Bx4mERttNucr8Fhhmldnq8lFltGhoE05oBzQZMMw2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=FxQrn7dnpIn-GCHZBuNE2hFhyxWTQ5NIm2jYr5iX_vGLDrl920MnY1gT3uvSGAeG9gKd6filqdrvi2-6PJT7eB81956kzC4c3ibbNo0F6RiDJwuDMgtDmQgIu2idXVzbCgLpMOISlAnTbhy-yx4HyQ2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=htezCf7KGMlAH_9NHNxlqUXH9cLh3OHKoJd8lpYd7Ho5cak8bx9nHNH2u1ROfP2P9ILY_bRcTtm3HXA7nfe-hinIDtzFmlSkqFx69zjg8x5rmhZBE_ncVNav1ZAysBSdo0jsmKPm7AjlykJcRCLE1A2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=z9jIDAWG_0qLzUS2vdvx9mywtLyYMRWaqm8tGbvZ1TFH4yvElpLMkXJfdTLuZQdrSbAG4uuPWRwJlObLuxMjsCdoRhhtngnX-2uMuZs-Bv0EfQlyHihmnUWWgob6h9F5CyrC3N_4V-9InBTNY84VbA2&amp;t=637049168472546396" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function () {{
+    $('body').append('<div>');
+            pageSetup();
+        }});
+function showTimeOutAlert() {
+            showClientSideAlertDialog('עקב חוסר פעילות המערכת תסגר בקרוב ויהיה צורך לבצע כניסה מחודשת, יש לאשר הודעה זאת על מנת להישאר מחוברים', function () { __doPostBack(); });            
+        }//]]>
+</script>
+
+<script src="/Live/ScriptResource.axd?d=_QD-nZRXheXc5gNnY6QLNNRqkMLBFO-ck1fvK4Fa2YLLJeUR4_e1Tm3Sa43COdyy7m3Z7GPHbAbi-_MmNRFevdY9iChaB6KC-MH9w1pZXwbLZINM61EVbzEuRrARPlkFUbHFH-bVU8cGJXTXy9KDNg2&amp;t=3236b552" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var tvMain_Data = null;//]]>
+</script>
+
+<script src="/Live/WebResource.axd?d=6nt0wTXSmMix23u5e0jecst7QkX4XHfeM5ufaxenS7SH01b4WXsb9sWSd51jppamYo7-0UH_GjY4Ks84-eWYkaR9-fRldKV3Hs5L_VKGqPLYGMLdGyc60SmjkUNQ2ac1wS8pICOiLLAdr9QSStcvXd0AR1YfmzLRJALygq5epOk1&amp;t=637049168370154209" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=jQPa7mbBbVC8q7gmUvw1vXhixVUHse-8vvZ63ZPAd-XIZuTKv8vi0Pxymu6jr1YvYxEcuxCaJfUfVgB8fbSJtcywURimNjSc1fXwckAyyXN3rOkume-7mleahIP6awt6NMYduTIA-x2z7YVVqsPLbX__fohy5DXXqCoLODONBgE1&amp;t=637049168370154209" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=qpI-U1hyQB9m6KTjoAQrrGbcpiimE0XNLPjLqv5jFbqzWmvTibPt5rqcDiLc95vgW5hHtgn4Xzazb0B1P13XE2-QD5Aa8UyxLrg2oQ7BgZYtHQiSVpzaFJADjRxhb1XIOecIGEEqw3TF84Ko5A1ecKuohz9EIxtbx7BBCyGSs881&amp;t=637049168370154209" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=-umqfS4Ua08zm4EoFk1ria6qA2F0gBJfzUVoXSjxyjP3zo2aPemZuFzOkYlfkvm-ze0pLfYIfIvXqz6F-U5pk6NfzbeT4ArT627HrwD--tGIPryb20KDnGDSGi3ECa66A04-1OvJy_NHrAf9254DgHdyMSZtIKDD97oI3Hxnol01&amp;t=637049168409335932" type="text/javascript"></script>
+<script src="/Live/ScriptResource.axd?d=wQHOto6zm8i8Ecj4zGDbPbfrjVVcSsSGQX7V8rNHhW6QiRcC0ZKSGthBUnHwUIX3Z6tPIZwkrHu1fg20gh402NRQc2GIak1WXedz059TNmlLth56A5DFETEgpB1z44buiECjxu--XkNcp0FPe7SamNWgqnj5bM-EI4hZ7k79eLs1&amp;t=2b48f70a" type="text/javascript"></script>
+<script src="/Live/ScriptResource.axd?d=dlFIeAlYtGgAUf7WcJLssqptymOiGBIqMFY6YFSmIlmiZ6wdQ0kRNty20qAXas1nibMHn5wcVsD22XgPYa7zsYFstfw8i3I8xjaAcHI0RB6kfpP33cQasrBTEM_jn-CkAvx5fUAQKCBGBFjR7HRm2mRjWhmF4NU8fM36QET6m1cce-uNsu84aBn5iXdJCckD0&amp;t=2b48f70a" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAB2vVXD1oYELeveMr0vHCmYPyVRh4qioPQhGRSFV9tl2sR3BpsPLayAu0LABaKwLl7yX33OqiHkm5JIC+H88J4mHv/9cEl1Tp/6yfK1Ps5/laOFJtbtB8vv6k9boEXMc9WR1qq3/Avpk1nnrXWOj+TaiGFMeik88kPXeFWRiAmietcV+Hr/IQfisA3xY3SVS8r28+pqophk05w/inQCsOp5zAHUyZo1GzbPAHPGVqPb8l1ID/clrj78nqV73Jgn0T3NgCh17mpU/S4r2YAn1N0i14G9RoYIFOMcEWL7fLNFZGAio36XOEgLGFdE3zHJ1tUYIAICVSIqPt0/S9U7cUumyPKdlfnIl2WDVUXw2lY7bNYC8kB5LdyIq3W/yJgdP8837QF7SfJ4LuT3QZwKzUaXv2AMvEENY/3aIVLgt0g5MPyiKuFh4jiRjG8AmfVFX7sM5a/INuayvaaDyj1Y7QLwHChcmXfh3dZlGTrkvzNt7aQtfT6w7WAKP9UbMb5suNgq1o7resW2HjnhrRLrY2KtOX77o3ZE9FC+W1ZLpJZDO0OQx3UK8kYj5E2Md9+yhj7T2OlAhKpkFSdKBdTDYRDXuS3NExwx96xeDIgudjYeZLH0jmZakmyd1s9Sy5uP8zYzfrHV/7SPmtjKqieKq5gkA" />
+</div>
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+            
+            <div>
+                <div id="accessible-container">
+                </div>
+                <div class="dvServices">
+                    <div>
+                        <span id="lblUserFullName">נוגא אגון </span>
+                        <a id="HLLogOut" role="button" onclick="if ( !window.confirm(&#39;אישור יציאה&#39;) ) return false;" href="Logout.aspx">התנתק/י</a>
+                        <a id="hlMyDetails" role="button" href="MyDetails.aspx">פרופיל</a>|    
+                        
+                        <div id="dvLanguage" class="LoggedInLanguageBar"><span>עברית</span>&nbsp;|&nbsp;<a href="javascript:__doPostBack(&#39;ctl00$ctl17&#39;,&#39;&#39;)">English</a></div>
+                    </div>
+                    <div id="dvMobileMain">
+                        <a id="hlMain" href="Main.aspx">ראשי</a>
+                    </div>
+                    <div class="orbitLiveTeamWorkSwitch MobileHiddenElement">
+                        <span id="Label1" style="font-weight:bold;">OrbitLive</span>
+                        |
+                        <span dir="ltr">
+                            
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="dvLogo" class="dvLogo"></div>
+            <div id="dvHeader">
+                <h1 id="dvSchoolName" class="dvSchoolName">אינ-בר אונ&#39; בר אילן מידע  אישי לסטודנט</h1>
+            </div>
+            <div>
+                <div id="dvTreeContainer" class="treeContainer MobileHiddenElement">
+
+                    <label for="cmbActiveYear" class="visuallyhidden">שנה פעילה</label>
+
+                    <select name="ctl00$cmbActiveYear" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$cmbActiveYear\&#39;,\&#39;\&#39;)&#39;, 0)" id="cmbActiveYear" class="yearCombo">
+	<option selected="selected" value="2020">תש&quot;פ - 2020</option>
+	<option value="2018">תשע&quot;ח - 2018</option>
+	<option value="2017">תשע&quot;ז - 2017</option>
+	<option value="2016">תשע&quot;ו - 2016</option>
+
+</select>
+
+                    <div id="dvMenu">
+                        <a href="#tvMain_SkipLink"><img alt="Skip Navigation Links." src="/Live/WebResource.axd?d=Ys-3udrZyI2ssinDy78EmKVjIYWfApsdEISJC8E1oYSVZQDPTqhPdiDACarGi8-8AKKL3lUQCqJCObFZB_P3wyDj3kdYh77KoyETeiWhv1k1&amp;t=636768548402700171" width="0" height="0" style="border-width:0px;" /></a><div id="tvMain">
+	<table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="Main.aspx" id="tvMainn0">ראשי</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,1,document.getElementById(&#39;tvMainn1&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn1Nodes&#39;));" id="tvMainn1">מועמד</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn1Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="CandidateInformation.aspx" id="tvMainn2">נתוני מועמד</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="CandidateDetails.aspx" id="tvMainn3">הרשמה וקבלה</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,4,document.getElementById(&#39;tvMainn4&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn4Nodes&#39;));" id="tvMainn4">מערכת שעות - סטודנט</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn4Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentPeriodSchedule.aspx" id="tvMainn5">רשימה</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentMatrixPeriodSchedule.aspx" id="tvMainn6">מטריצה</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,7,document.getElementById(&#39;tvMainn7&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn7Nodes&#39;));" id="tvMainn7">בחינות/ציונים</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn7Nodes" style="display:block;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="activeNode secondLevelNode">
+					<a class="tvMain_0" href="StudentAssignmentTermList.aspx" id="tvMainn8">לוח בחינות - סטודנט</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentGradesList.aspx" id="tvMainn9">רשימת ציונים</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentAverage.aspx" id="tvMainn10">ממוצע ציונים</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentOverLappingTerms.aspx" id="tvMainn11">בחינות חופפות</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="TeacherLessonFeedbacks.aspx" id="tvMainn12">משובים</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,13,document.getElementById(&#39;tvMainn13&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn13Nodes&#39;));" id="tvMainn13">מצב חשבון</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn13Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="DebtPayment.aspx" id="tvMainn14">תשלום חוב</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="BaseToCalculateBalance.aspx" id="tvMainn15">בסיס לחישוב שכ'ל</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="BalanceSheetSummarized.aspx" id="tvMainn16">מצב חשבון מתומצת</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentPaymentsList.aspx" id="tvMainn17">רשימת תשלומים\שוברים</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="CreateStudentWeeklySchedule.aspx" id="tvMainn18">יעוץ וירטואלי</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,19,document.getElementById(&#39;tvMainn19&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn19Nodes&#39;));" id="tvMainn19">אישורים/טפסים ללא תשלום</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn19Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="DocumentGenerationPage.aspx" id="tvMainn20">הפקת מסמכים</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,21,document.getElementById(&#39;tvMainn21&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn21Nodes&#39;));" id="tvMainn21">העלאת קבצים</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn21Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="PersonUploadPassportImage.aspx" id="tvMainn22">העלאת תמונה</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,23,document.getElementById(&#39;tvMainn23&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn23Nodes&#39;));" id="tvMainn23">פניות מנהליות</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn23Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="AdminRequest.aspx" id="tvMainn24">רשימת בקשות</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="AdminRequestForms.aspx" id="tvMainn25">הגשת בקשה</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="ReleaseFormsPage.aspx" id="tvMainn26">בקשת אישור לסיום תואר</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="EmailToSecretary.aspx" id="tvMainn27">פניה למזכירות</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="PersonEnviromentsPage.aspx" id="tvMainn28">קודי משתמש במחשב</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="LearningConditionsPage.aspx" id="tvMainn29">תנאי לימוד</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="MyDetails.aspx" id="tvMainn30">הפרטים שלי</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:if (window.confirm(&#39;אישור יציאה&#39;)) window.location.href=&#39;Logout.aspx&#39;" id="tvMainn31">יציאה</a>
+			</div></td>
+		</tr>
+	</table>
+</div><a id="tvMain_SkipLink"></a>
+                        <div id="TreeBottom"></div>
+                    </div>
+                </div>
+                <div id="dvMainMasterPanel" class="mainMasterPanel">
+                    <h1 id="dvContentHeader" class="MasterPagePageTitle">לוח בחינות</h1>
+                    <div id="dvMobileActiveYearContainer" class="mobileOnlyContainer"></div>
+                    <div id="dvToolbar" class="dvToolbar">
+                        <span>
+                            <a onclick=";javascript:window.print();return false;" id="btnPrint" title="הדפסה" role="button" aria-label="הדפסה" href="javascript:__doPostBack(&#39;ctl00$btnPrint&#39;,&#39;&#39;)"><img src="App_Themes/default/Gfx/24/Printer.Png" alt="" /></a>
+                        </span>
+                        <span>
+                            
+                        </span>
+                        <span id="spanToolBarContainer"><table cellPadding="0" cellSpacing="0" class="ToolBarTable"><tr><td class="ToolBarCell1">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <input id="tbMain_ctl03_chkPersonalAssignmentTerms" type="checkbox" name="ctl00$tbMain$ctl03$chkPersonalAssignmentTerms" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$tbMain$ctl03$chkPersonalAssignmentTerms\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="tbMain_ctl03_chkPersonalAssignmentTerms">לוח בחינות אישי מכל השנים</label>
+                    </td>
+                    <td>                         
+                        <select name="ctl00$tbMain$ctl03$ddlExamDateRangeFilter" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$tbMain$ctl03$ddlExamDateRangeFilter\&#39;,\&#39;\&#39;)&#39;, 0)" id="tbMain_ctl03_ddlExamDateRangeFilter" aria-label="סינון בחינות">
+	<option value="1">הכל</option>
+	<option selected="selected" value="2">בחינות עתידיות</option>
+	<option value="3">בחינות שעברו</option>
+
+</select>                        
+                    </td>
+                    <td>                         
+                        <input type="submit" name="ctl00$tbMain$ctl03$btnShowOverlappingExams" value="בחינות חופפות" id="tbMain_ctl03_btnShowOverlappingExams" class="buttons" />           
+                    </td>
+                </tr>
+            </table>        
+        </td><td class="ToolBarCell2"></td><td class="ToolBarCell3"></td></tr></table></span>
+                    </div>
+                    <div id="MasterPagePageConent">
+                        
+
+    
+    
+    <div>
+	<table class="GridView" cellspacing="0" id="ContentPlaceHolder1_gvStudentAssignmentTermList" style="border-collapse:collapse;">
+		<tr class="GridHeader" align="right">
+			<th scope="col">תאריך</th><th scope="col">יום</th><th align="center" scope="col">שעה</th><th scope="col">מועד</th><th scope="col">ציון</th><th class="MobileHiddenColumn" scope="col">ציון סופי</th><th scope="col">חדר</th><th class="MobileHiddenColumn" scope="col">תקופה</th><th class="MobileHiddenColumn" scope="col">קוד קבוצת קורס</th><th scope="col">שם קבוצת קורס</th><th class="MobileHiddenColumn" scope="col">שם מרצה</th><th class="MobileHiddenColumn" align="center" scope="col">רישום למועד</th><th align="center" scope="col">מחברת</th><th class="MobileHiddenColumn" align="center" scope="col">הגשת ערעור</th><th class="MobileHiddenColumn" align="center" scope="col">מספר מחברת</th><th class="MobileHiddenColumn" align="center" scope="col">סופי</th>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="GridRow">
+			<td>06/11/2019</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_0">ד'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_0">12:00</span>
+                </td><td style="white-space:nowrap;">מועד א'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96161-20</td><td>אנגלית</td><td class="MobileHiddenColumn" style="white-space:nowrap;">גב' גל סוזן שולמית </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_0"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_0" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow0$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="AlternatingGridRow">
+			<td>20/11/2019</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_1">ד'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_1">12:00</span>
+                </td><td style="white-space:nowrap;">מועד ב'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96161-20</td><td>אנגלית</td><td class="MobileHiddenColumn" style="white-space:nowrap;">גב' גל סוזן שולמית </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_1"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_1" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow1$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="GridRow">
+			<td>02/02/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_2">א'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_2">09:00</span>
+                </td><td style="white-space:nowrap;">מועד א'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96120-17</td><td>מתמטיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">מר אסראף רואי ניסים </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_2"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_2" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow2$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="AlternatingGridRow">
+			<td>11/02/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_3">ג'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_3">09:00</span>
+                </td><td style="white-space:nowrap;">מועד א'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96900-17</td><td>פיזיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">גב' תימור רעות </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_3"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_3" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow3$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="GridRow">
+			<td>23/02/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_4">א'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_4">09:00</span>
+                </td><td style="white-space:nowrap;">מועד ב'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96120-17</td><td>מתמטיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">מר אסראף רואי ניסים </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_4"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_4" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow4$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="AlternatingGridRow">
+			<td>03/03/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_5">ג'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_5">09:00</span>
+                </td><td style="white-space:nowrap;">מועד ב'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96900-17</td><td>פיזיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">גב' תימור רעות </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_5"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_5" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow5$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="GridRow">
+			<td>28/06/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_6">א'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_6">16:00</span>
+                </td><td style="white-space:nowrap;">מועד א'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96604-17</td><td>כתיבה אקדמית</td><td class="MobileHiddenColumn" style="white-space:nowrap;">לבנט  אפרת </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_6"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_6" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow6$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="AlternatingGridRow">
+			<td>05/07/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_7">א'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_7">09:00</span>
+                </td><td style="white-space:nowrap;">מועד א'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96120-17</td><td>מתמטיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">מר אסראף רואי ניסים </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_7"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_7" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow7$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="GridRow">
+			<td>12/07/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_8">א'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_8">09:00</span>
+                </td><td style="white-space:nowrap;">מועד א'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96900-17</td><td>פיזיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">גב' תימור רעות </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_8"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_8" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow8$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="AlternatingGridRow">
+			<td>19/07/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_9">א'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_9">09:00</span>
+                </td><td style="white-space:nowrap;">מועד ב'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96604-17</td><td>כתיבה אקדמית</td><td class="MobileHiddenColumn" style="white-space:nowrap;">לבנט  אפרת </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_9"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_9" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow9$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="GridRow">
+			<td>24/07/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_10">ו'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_10">09:00</span>
+                </td><td style="white-space:nowrap;">מועד ב'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96120-17</td><td>מתמטיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">מר אסראף רואי ניסים </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_10"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_10" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow10$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvStudentAssignmentTermList" class="AlternatingGridRow">
+			<td>02/08/2020</td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblRowDayOfWeek_11">א'</span>
+                </td><td>
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblAssignmentTermStartTime_11">09:00</span>
+                </td><td style="white-space:nowrap;">מועד ב'</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">שנתי</td><td class="MobileHiddenColumn" style="white-space:nowrap;">96900-17</td><td>פיזיקה</td><td class="MobileHiddenColumn" style="white-space:nowrap;">גב' תימור רעות </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">                    
+                     
+                     
+                                         
+                                         
+                       
+                                         
+                    <br />
+                    <div align="right">
+                         
+                    </div>
+                </td><td align="center" valign="top" style="width:10%;">    
+                    
+                                        
+                    
+                </td><td class="MobileHiddenColumn" align="center" valign="top" style="width:10%;">
+                       
+                     
+                     
+                     
+                                         
+                </td><td class="MobileHiddenColumn">
+                    <span id="ContentPlaceHolder1_gvStudentAssignmentTermList_lblExamNotebookNum_11"></span>
+                </td><td class="MobileHiddenColumn">
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_gvStudentAssignmentTermList_chkFinalized_11" type="checkbox" name="ctl00$ContentPlaceHolder1$gvStudentAssignmentTermList$GridRow11$chkFinalized" disabled="disabled" /></span>
+                </td>
+		</tr>
+	</table>
+</div>
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#ContentPlaceHolder1_AppealFormStudent_btnSave").click(function () {
+            if ($("#ContentPlaceHolder1_AppealFormStudent_edtAppeal").val().length > 2000) {
+                window.alert("חריגה באורך הטקסט");
+                return false;
+            }
+            if ($("#ContentPlaceHolder1_AppealFormTeacher_edtAppealAnswer").val().length > 2000) {
+                window.alert("חריגה באורך הטקסט");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
+
+
+    <!-- legend -->
+    
+    <!-- End legend -->
+    
+  
+                    </div>
+                </div>
+            </div>
+            <div class="footerComment">
+                <div id="dvFooterText">
+                    <span id="lblFooterComment">* המידע המופיע באתר הינו לצורך תצוגה וידיעה בלבד. רק מסמך הנושא חותמת וחתימת בעל תפקיד מורשה מחייב רשמית את המוסד.</span>
+                </div>
+                <div>
+                    <div class="version">
+                        <span id="lblVersion" style="color:graytext;"> ver 6.0.190924 </span>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="http://www.or-bit.net" style="width: 150px; display: inline-block;" target="_blank">Product of Or-Bit.net</a>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+            <div id="mpAgreement" class="ModalDialog dvAgreementModelDialog" role="dialog" style="width:550px;z-index:90000001;Position:absolute;">
+	<h2 Class="ModalDialogTop">כתב הסכמה</h2>
+                <div id="dvAgreementText" style="padding: 10px; max-height: 500px; overflow: auto;">
+                    <div id="dvAgreement" class="dvAgreement" style="overflow: auto;"><p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">סטודנט/ית יקר/ה,</span></span></span></span></p>
+
+<p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">במסך הבא יוצג לוח כללי של תאריכי בחינות בקורסים בהם הנך רשום/ה. </span></span></span></span></p>
+
+<p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">לוח תאריכי בחינות בהם הנך רשום/ה בפועל יוצג בלחיצה על &quot;לוח בחינות אישי מכל השנים&quot;.</span></span></span></span></p>
+
+<p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif"><u><strong>בחינות במועדים מיוחדים</strong></u> &ndash; ניצול מכסת המועדים הינה בכפוף לאישורים שקיבלת ממדור סטטוס או מהוועדה לתארים מתקדמים בלבד.</span></span></span></span></p>
+
+<p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">כאשר מופיעה הערה &quot;מוגבל ל-1 מועדים&quot;, באפשרותך לבחור האם לגשת למועד א&#39; או למועד ב&#39;.</span></span></span></span></p>
+
+<p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif"><u><strong>מועדי ב&#39; </strong></u>- חובה לבדוק אם הנך רשום למועד ב&#39; על פי הקריטריונים הבאים:</span></span></span></span></p>
+
+<ul>
+	<li><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">סטודנט שנכשל בבחינה, או קיבל ציון 70 כולל, או לא נבחן במועד א&#39; -יופיע אוטומטית ברשימת הנבחנים.</span></span></span></span></li>
+	<li><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">אם ציון הבחינה הוא 71 ומעלה- ניתן להירשם לבחינה החל מ- 17 ימים לפני מועד ב&#39; ועד שבוע לפני הבחינה בעמודה &quot;רישום למועד&quot;.</span></span></span></span></li>
+</ul>
+
+<p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">רישום באיחור יחייב תשלום של 80 ₪ עבור דמי טיפול. </span></span></span></span></p>
+
+<p><span style="font-size:12.8px"><span style="color:#222222"><span style="font-family:arial,sans-serif"><span style="font-family:Arial,sans-serif">מידע מורחב בנושא הבחינות מופיע באתר מדור בחינות.</span></span></span></span></p>
+</div>
+                    
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%">
+                    <tr>
+                        <td align="right">
+                            <input type="submit" name="ctl00$btnCancelAgreement" value="ביטול" id="btnCancelAgreement" class="buttons" />
+                        </td>
+                        <td align="left">
+                            <input type="submit" name="ctl00$btnOkAgreement" value="אישור" id="btnOkAgreement" class="buttons" />
+                        </td>
+                    </tr>
+                </table>
+            
+</div>
+            
+        <input type="button" name="ctl00$btnSetSupportMode" value="" onclick="javascript:__doPostBack(&#39;ctl00$btnSetSupportMode&#39;,&#39;&#39;)" id="btnSetSupportMode" style="height:0px;width:0px;z-index:-1000;Top:0px;Left:0px;position:absolute;" />
+<script type="text/javascript">
+//<![CDATA[
+var tvMain_ImageArray =  new Array('', '', '', '/Live/WebResource.axd?d=sunXRJ0VKM82VodqK63FPVO1CTB8d4uDVGFLa2SjmWXL-lUpMMIXYpDVkn0-vsqdGvk0EdBMfXiOZlrsbHmcsdPQjtXD_b7mJTbZ2CJnZJMsVRtfi790dvRYavS-1Ctr0&t=636768548402700171', '/Live/WebResource.axd?d=7lIt8AeoREJwX9u07JgndVFq5x3WEx5i7YiwKvNhuh5HogvAp8u8IgmcIwgKEPcm1TcoP9IkWK3oqn6r6Zb_r86e2Zenv5IvT1wuhFk063DUFRXBwgM5P5MGbUyytL6K0&t=636768548402700171', '/Live/WebResource.axd?d=xpOEPBf0yPtCjoeJHExOesn1P17iQLDCctnO3yW4r0jz06X_57Uj77By7NfeEIORt1_L1cO-BWBTuPOJzhEFQWEE6V7WUtTfOCPE1ASgrnNdmhFOBDcdVaZIAnHSn4KR0&t=636768548402700171');
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+shortcut.add("Ctrl+Alt+S", function () { $('#btnSetSupportMode').click(); });setTimeout('showTimeOutAlert();',1140000);var tvMain_Data = new Object();
+tvMain_Data.images = tvMain_ImageArray;
+tvMain_Data.collapseToolTip = "Collapse {0}";
+tvMain_Data.expandToolTip = "Expand {0}";
+tvMain_Data.expandState = theForm.elements['tvMain_ExpandState'];
+tvMain_Data.selectedNodeID = theForm.elements['tvMain_SelectedNode'];
+(function() {
+  for (var i=0;i<6;i++) {
+  var preLoad = new Image();
+  if (tvMain_ImageArray[i].length > 0)
+    preLoad.src = tvMain_ImageArray[i];
+  }
+})();
+CenterInPage('mpAgreement');disableTabControlsForModal('mpAgreement');hideSelectBoxesForModal('mpAgreement');$(document).ready(function() { setBackgroundOpaqueDiv('mpAgreement'); });//]]>
+</script>
+</form>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                initPage();
+                setFocusToError();
+            });
+
+            function initPage() {
+
+                if ($("#dvMobileActiveYearContainer").is(':visible'))
+                    $(".yearCombo").appendTo($("#dvMobileActiveYearContainer"));
+                $("#tvMain A").attr('tabindex', '1');
+                $(document).mousedown(function (e) {
+                    window.mouseXPos = e.pageX;
+                    window.mouseYPos = e.pageY;
+                });               
+            }
+
+            function setFocusToError() {
+
+                var lblAgreementApprovalMsg = $("#lblAgreementApprovalMsg");
+                if (lblAgreementApprovalMsg.length > 0) { //Validtion failed.
+                    $("#chkAgreementApproval").focus();
+                }
+
+            }
+
+        </script>
+    </div>
+    <div id="pleaseWaitWindow">
+        <div id="pleaseWaitWindowAnimation"></div>
+    </div>
+</body>
+</html>
+''';
+
+String courses2019a = r'''
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; https://www.google.com/recaptcha/; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; https://www.google.com/recaptcha/  https://www.gstatic.com/recaptcha/; style-src &#39;self&#39; &#39;unsafe-inline&#39;;img-src &#39;self&#39; data:" /><link href="App_Themes/default/accessibilityTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/animateTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/font-awesomeTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/styleV2Tue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><link href="App_Themes/default/xstyleTue09-24-2019@10-14-24.22.css" type="text/css" rel="stylesheet" /><title>
+	Schedule
+</title>
+<meta name="viewport" content="width=device-width" /><link rel="icon" href="data:;base64,iVBORw0KGgo=" /><style type="text/css">
+	.tvMain_0 { text-decoration:none; }
+
+</style></head>
+<body id="ltr" dir="ltr" onbeforeunload="ShowWaiting();">
+    <div>
+        <form method="post" action="./StudentPeriodSchedule.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="tvMain_ExpandState" id="tvMain_ExpandState" value="nunnennunnnnnunnnnnunununnnnnnnn" />
+<input type="hidden" name="tvMain_SelectedNode" id="tvMain_SelectedNode" value="tvMainn5" />
+<input type="hidden" name="__PageDataKey" id="__PageDataKey" value="VIEWSTATE_DATA_S_jmiqh5s05nzupu1s4zp23w3i_L0xpdmUvU3R1ZGVudFBlcmlvZFNjaGVkdWxlLmFzcHg=_637074413441563849" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Live/WebResource.axd?d=LaYn3burdyVmW1N3AkFdyOBz8MlXKtWxmI2YQoSD5bR6PXjAdLxbT_zysmNeLPLG6G3R3rl7BgW21cC0L6o2kB-Tnc1IGVwq--YGFn2IC2g1&amp;t=636768548402700171" type="text/javascript"></script>
+
+
+<script src="/Live/WebResource.axd?d=dGOpdboWAsWO75ANPXBQIbY8m_rNVTIwktmEbs9Ajm1N9EN4hPQ8VQweRUuQVC9rN3eycYxhAhk2a-dozhiCeAHUroXpEhbwXlhDd2B_kB-MLmCrv_MFx1arh10ZuAoAM8zUfc3JvbNML_FfOyvCvw2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=maA3ogMNFT_BHg_vTAsbu5NjEeAmB-sPMI0-1g3JYpOwrGJ8n24JiJky7F-n95YEbIRTSywklRMG10emHuf1CvKVopmkfrp0Z-kd4r1f998eF0serUoyV4v1OygRNZDWd2xIwGFroGpTeuk9n817-w2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=vYyuaxh7RmK8rDw8Y_230mOOKtkB0gfrpREuItjPpydtV00i7n3VTs13YSedMZ_1ds5X05yHBhLR18Eum73x7D9_pv4GSwUyC1OUG9cFsqneL8Bx4mERttNucr8Fhhmldnq8lFltGhoE05oBzQZMMw2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=FxQrn7dnpIn-GCHZBuNE2hFhyxWTQ5NIm2jYr5iX_vGLDrl920MnY1gT3uvSGAeG9gKd6filqdrvi2-6PJT7eB81956kzC4c3ibbNo0F6RiDJwuDMgtDmQgIu2idXVzbCgLpMOISlAnTbhy-yx4HyQ2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=htezCf7KGMlAH_9NHNxlqUXH9cLh3OHKoJd8lpYd7Ho5cak8bx9nHNH2u1ROfP2P9ILY_bRcTtm3HXA7nfe-hinIDtzFmlSkqFx69zjg8x5rmhZBE_ncVNav1ZAysBSdo0jsmKPm7AjlykJcRCLE1A2&amp;t=637049168472546396" type="text/javascript"></script>
+<script src="/Live/WebResource.axd?d=z9jIDAWG_0qLzUS2vdvx9mywtLyYMRWaqm8tGbvZ1TFH4yvElpLMkXJfdTLuZQdrSbAG4uuPWRwJlObLuxMjsCdoRhhtngnX-2uMuZs-Bv0EfQlyHihmnUWWgob6h9F5CyrC3N_4V-9InBTNY84VbA2&amp;t=637049168472546396" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function () {{
+    $('body').append('<div>');
+            pageSetup();
+        }});
+function showTimeOutAlert() {
+            showClientSideAlertDialog('Idle maximum period is about to be reached, after which you will be logged out,Press any key to stay logged in', function () { __doPostBack(); });            
+        }//]]>
+</script>
+
+<script src="/Live/ScriptResource.axd?d=_QD-nZRXheXc5gNnY6QLNNRqkMLBFO-ck1fvK4Fa2YLLJeUR4_e1Tm3Sa43COdyy7m3Z7GPHbAbi-_MmNRFevdY9iChaB6KC-MH9w1pZXwbLZINM61EVbzEuRrARPlkFUbHFH-bVU8cGJXTXy9KDNg2&amp;t=3236b552" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var tvMain_Data = null;//]]>
+</script>
+
+<script src="/Live/WebResource.axd?d=6nt0wTXSmMix23u5e0jecst7QkX4XHfeM5ufaxenS7SH01b4WXsb9sWSd51jppamYo7-0UH_GjY4Ks84-eWYkaR9-fRldKV3Hs5L_VKGqPLYGMLdGyc60SmjkUNQ2ac1wS8pICOiLLAdr9QSStcvXd0AR1YfmzLRJALygq5epOk1&amp;t=637049168370154209" type="text/javascript"></script>
+<script src="/Live/ScriptResource.axd?d=wQHOto6zm8i8Ecj4zGDbPbfrjVVcSsSGQX7V8rNHhW6QiRcC0ZKSGthBUnHwUIX3Z6tPIZwkrHu1fg20gh402NRQc2GIak1WXedz059TNmlLth56A5DFETEgpB1z44buiECjxu--XkNcp0FPe7SamNWgqnj5bM-EI4hZ7k79eLs1&amp;t=2b48f70a" type="text/javascript"></script>
+<script src="/Live/ScriptResource.axd?d=dlFIeAlYtGgAUf7WcJLssqptymOiGBIqMFY6YFSmIlmiZ6wdQ0kRNty20qAXas1nibMHn5wcVsD22XgPYa7zsYFstfw8i3I8xjaAcHI0RB6kfpP33cQasrBTEM_jn-CkAvx5fUAQKCBGBFjR7HRm2mRjWhmF4NU8fM36QET6m1cce-uNsu84aBn5iXdJCckD0&amp;t=2b48f70a" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA2vVXD1oYELeveMr0vHCmYP2moi60c/NBo6km7Wx0o3Qx3BpsPLayAu0LABaKwLl7yX33OqiHkm5JIC+H88J4mHv/9cEl1Tp/6yfK1Ps5/laOFJtbtB8vv6k9boEXMc9WR1qq3/Avpk1nnrXWOj+TaiGFMeik88kPXeFWRiAmietYs1/BcEstP2+aWBucSKi1xIidymRuh4EuTZco7ZDW4tuQ4wosmVUAEDpqhnpQ4c44WLoYqrB23LMC7FXZd1+dFLc0THDH3rF4MiC52Nh5ks/m+vzSrFD4P0LvKi44aVPMftOh3xZewiunKqOGNNwoA=" />
+</div>
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+            
+            <div>
+                <div id="accessible-container">
+                </div>
+                <div class="dvServices">
+                    <div>
+                        <span id="lblUserFullName">Noga Agon </span>
+                        <a id="HLLogOut" role="button" onclick="if ( !window.confirm(&#39;Confirm signing out&#39;) ) return false;" href="Logout.aspx">Sign out</a>
+                        <a id="hlMyDetails" role="button" href="MyDetails.aspx">Profile</a>|    
+                        
+                        <div id="dvLanguage" class="LoggedInLanguageBar"><a href="javascript:__doPostBack(&#39;ctl00$ctl16&#39;,&#39;&#39;)">עברית</a>&nbsp;|&nbsp;<span>English</span></div>
+                    </div>
+                    <div id="dvMobileMain">
+                        <a id="hlMain" href="Main.aspx">Main</a>
+                    </div>
+                    <div class="orbitLiveTeamWorkSwitch MobileHiddenElement">
+                        <span id="Label1" style="font-weight:bold;">OrbitLive</span>
+                        |
+                        <span dir="ltr">
+                            
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="dvLogo" class="dvLogo"></div>
+            <div id="dvHeader">
+                <h1 id="dvSchoolName" class="dvSchoolName">IN-BAR Bar-Ilan  - student&#39;s online service system</h1>
+            </div>
+            <div>
+                <div id="dvTreeContainer" class="treeContainer MobileHiddenElement">
+
+                    <label for="cmbActiveYear" class="visuallyhidden">Active Year</label>
+
+                    <select name="ctl00$cmbActiveYear" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$cmbActiveYear\&#39;,\&#39;\&#39;)&#39;, 0)" id="cmbActiveYear" class="yearCombo">
+	<option selected="selected" value="2020">2020</option>
+	<option value="2018">2018</option>
+	<option value="2017">2017</option>
+	<option value="2016">2016</option>
+
+</select>
+
+                    <div id="dvMenu">
+                        <a href="#tvMain_SkipLink"><img alt="Skip Navigation Links." src="/Live/WebResource.axd?d=Ys-3udrZyI2ssinDy78EmKVjIYWfApsdEISJC8E1oYSVZQDPTqhPdiDACarGi8-8AKKL3lUQCqJCObFZB_P3wyDj3kdYh77KoyETeiWhv1k1&amp;t=636768548402700171" width="0" height="0" style="border-width:0px;" /></a><div id="tvMain">
+	<table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="Main.aspx" id="tvMainn0">Main</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,1,document.getElementById(&#39;tvMainn1&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn1Nodes&#39;));" id="tvMainn1">Candidate</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn1Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="CandidateInformation.aspx" id="tvMainn2">Educations</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="CandidateDetails.aspx" id="tvMainn3">Registration</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,4,document.getElementById(&#39;tvMainn4&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn4Nodes&#39;));" id="tvMainn4">Schedule</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn4Nodes" style="display:block;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="activeNode secondLevelNode">
+					<a class="tvMain_0" href="StudentPeriodSchedule.aspx" id="tvMainn5">List</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentMatrixPeriodSchedule.aspx" id="tvMainn6">Table</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,7,document.getElementById(&#39;tvMainn7&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn7Nodes&#39;));" id="tvMainn7">Exams/Grades</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn7Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentAssignmentTermList.aspx" id="tvMainn8">Term List - Student</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentGradesList.aspx" id="tvMainn9">Grades List</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentAverage.aspx" id="tvMainn10">Grades average</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentOverLappingTerms.aspx" id="tvMainn11">Over Lapping Terms</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="TeacherLessonFeedbacks.aspx" id="tvMainn12">Feedbacks</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,13,document.getElementById(&#39;tvMainn13&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn13Nodes&#39;));" id="tvMainn13">Balance Sheet</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn13Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="DebtPayment.aspx" id="tvMainn14">Debt Payment</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="BaseToCalculateBalance.aspx" id="tvMainn15">Base to calculate balance</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="BalanceSheetSummarized.aspx" id="tvMainn16">Balance sheet</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="StudentPaymentsList.aspx" id="tvMainn17">Payments list</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="CreateStudentWeeklySchedule.aspx" id="tvMainn18">Virtual counseling</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,19,document.getElementById(&#39;tvMainn19&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn19Nodes&#39;));" id="tvMainn19">Documents and Approvals</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn19Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="DocumentGenerationPage.aspx" id="tvMainn20">Documents</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,21,document.getElementById(&#39;tvMainn21&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn21Nodes&#39;));" id="tvMainn21">Upload Files</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn21Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="PersonUploadPassportImage.aspx" id="tvMainn22">Upload Image</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:TreeView_ToggleNode(tvMain_Data,23,document.getElementById(&#39;tvMainn23&#39;) ,&#39; &#39;,document.getElementById(&#39;tvMainn23Nodes&#39;));" id="tvMainn23">Administrative requests</a>
+			</div></td>
+		</tr>
+	</table><div id="tvMainn23Nodes" style="display:none;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="AdminRequest.aspx" id="tvMainn24">Request list</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="AdminRequestForms.aspx" id="tvMainn25">Request submission</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="ReleaseFormsPage.aspx" id="tvMainn26">Reqest graduation certificate</a>
+				</div></td>
+			</tr>
+		</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tr>
+				<td><div style="width:0px;height:1px"></div></td><td style="white-space:nowrap;"><div class="inActiveNode secondLevelNode">
+					<a class="tvMain_0" href="EmailToSecretary.aspx" id="tvMainn27">Administrative request</a>
+				</div></td>
+			</tr>
+		</table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="PersonEnviromentsPage.aspx" id="tvMainn28">Computer user codes</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="LearningConditionsPage.aspx" id="tvMainn29">Learning conditions</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="MyDetails.aspx" id="tvMainn30">My Details</a>
+			</div></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tr>
+			<td style="white-space:nowrap;"><div class="inActiveNode topLevelNode">
+				<a class="tvMain_0" href="javascript:if (window.confirm(&#39;Confirm signing out&#39;)) window.location.href=&#39;Logout.aspx&#39;" id="tvMainn31">Sign out</a>
+			</div></td>
+		</tr>
+	</table>
+</div><a id="tvMain_SkipLink"></a>
+                        <div id="TreeBottom"></div>
+                    </div>
+                </div>
+                <div id="dvMainMasterPanel" class="mainMasterPanel">
+                    <h1 id="dvContentHeader" class="MasterPagePageTitle">Schedule</h1>
+                    <div id="dvMobileActiveYearContainer" class="mobileOnlyContainer"></div>
+                    <div id="dvToolbar" class="dvToolbar">
+                        <span>
+                            <a onclick=";javascript:window.print();return false;" id="btnPrint" title="Print" role="button" aria-label="Print" href="javascript:__doPostBack(&#39;ctl00$btnPrint&#39;,&#39;&#39;)"><img src="App_Themes/default/Gfx/24/Printer.Png" alt="" /></a>
+                        </span>
+                        <span>
+                            
+                        </span>
+                        <span id="spanToolBarContainer"><table cellPadding="0" cellSpacing="0" class="ToolBarTable"><tr><td class="ToolBarCell1">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <select name="ctl00$tbMain$ctl03$ddlPeriodTypeFilter2" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$tbMain$ctl03$ddlPeriodTypeFilter2\&#39;,\&#39;\&#39;)&#39;, 0)" id="tbMain_ctl03_ddlPeriodTypeFilter2" aria-label="Semester">
+	<option selected="selected" value="1">1st Semester</option>
+	<option value="2">2nd Semester</option>
+	<option value="3">Summer Semester</option>
+
+</select> 
+                    </td>
+                </tr>
+            </table>        
+        </td><td class="ToolBarCell2"></td><td class="ToolBarCell3"></td></tr></table></span>
+                    </div>
+                    <div id="MasterPagePageConent">
+                            
+
+    
+
+    <div>
+	<table class="GridView" cellspacing="0" aria-label="Schedule" id="ContentPlaceHolder1_gvPeriodSchedule" style="border-collapse:collapse;">
+		<tr class="GridHeader" align="right">
+			<th scope="col">Day</th><th scope="col">Hour</th><th scope="col">Course group Code</th><th scope="col">Course group Name</th><th scope="col">Meeting type</th><th class="MobileHiddenColumn" scope="col">Period</th><th class="MobileHiddenColumn" scope="col">Teacher</th><th class="MobileHiddenColumn" scope="col">Yearly Hours</th><th class="MobileHiddenColumn" scope="col">Points</th><th scope="col">Room</th><th scope="col">Status</th><th scope="col">&nbsp;</th>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="GridRow">
+			<td style="white-space:nowrap;">&nbsp;</td><td style="white-space:nowrap;">&nbsp;</td><td>96161-20</td><td>English</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn">Suzan Gal</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="AlternatingGridRow">
+			<td style="white-space:nowrap;">Sun</td><td style="white-space:nowrap;">10:00-16:00</td><td>96900-17</td><td>Physics</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn">reut timor</td><td class="MobileHiddenColumn" style="white-space:nowrap;">13</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>604 - 64</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="GridRow">
+			<td style="white-space:nowrap;">Sun</td><td style="white-space:nowrap;">16:00-18:00</td><td>96604-17</td><td>Academic Writing</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn"> </td><td class="MobileHiddenColumn" style="white-space:nowrap;">2</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>604 - 64</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="AlternatingGridRow">
+			<td style="white-space:nowrap;">Mon</td><td style="white-space:nowrap;">13:00-15:00</td><td>96120-03</td><td>Mathematics</td><td>Reinforcement</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn"> </td><td class="MobileHiddenColumn" style="white-space:nowrap;">2</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>508 - 7</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="GridRow">
+			<td style="white-space:nowrap;">Mon</td><td style="white-space:nowrap;">15:00-20:00</td><td>96120-17</td><td>Mathematics</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn">Roei Nisim Asraf</td><td class="MobileHiddenColumn" style="white-space:nowrap;">15</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>508 - 22</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="AlternatingGridRow">
+			<td style="white-space:nowrap;">Tue</td><td style="white-space:nowrap;">08:00-12:00</td><td>96900-17</td><td>Physics</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn">reut timor</td><td class="MobileHiddenColumn" style="white-space:nowrap;">13</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>508 - 22</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="GridRow">
+			<td style="white-space:nowrap;">Tue</td><td style="white-space:nowrap;">13:00-18:00</td><td>96120-17</td><td>Mathematics</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn">Roei Nisim Asraf</td><td class="MobileHiddenColumn" style="white-space:nowrap;">15</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>508 - 22</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="AlternatingGridRow">
+			<td style="white-space:nowrap;">Thu</td><td style="white-space:nowrap;">08:00-13:00</td><td>96120-17</td><td>Mathematics</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn">Roei Nisim Asraf</td><td class="MobileHiddenColumn" style="white-space:nowrap;">15</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>507 - 201</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="GridRow">
+			<td style="white-space:nowrap;">Thu</td><td style="white-space:nowrap;">13:00-16:00</td><td>96900-17</td><td>Physics</td><td>Lecture</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn">reut timor</td><td class="MobileHiddenColumn" style="white-space:nowrap;">13</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>507 - 201</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr><tr id="ContentPlaceHolder1_gvPeriodSchedule" class="AlternatingGridRow">
+			<td style="white-space:nowrap;">Thu</td><td style="white-space:nowrap;">16:00-18:00</td><td>96900-03</td><td>Physics</td><td>Reinforcement</td><td class="MobileHiddenColumn" style="white-space:nowrap;">Whole Year</td><td class="MobileHiddenColumn"> </td><td class="MobileHiddenColumn" style="white-space:nowrap;">2</td><td class="MobileHiddenColumn" style="white-space:nowrap;">&nbsp;</td><td>507 - 201</td><td>&nbsp;</td><td style="white-space:nowrap;">                    
+                                        
+                    
+                    
+                    
+                </td>
+		</tr>
+	</table>
+</div>
+    
+    
+    
+
+    
+
+    
+
+                    </div>
+                </div>
+            </div>
+            <div class="footerComment">
+                <div id="dvFooterText">
+                    <span id="lblFooterComment">
+* The information appearing on the site is for informational purposes only. Only formal document stamped and signed by an authorized official obligates the institution</span>
+                </div>
+                <div>
+                    <div class="version">
+                        <span id="lblVersion" style="color:graytext;"> ver 6.0.190924 </span>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="http://www.or-bit.net" style="width: 150px; display: inline-block;" target="_blank">Product of Or-Bit.net</a>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+            
+            
+        <input type="button" name="ctl00$btnSetSupportMode" value="" onclick="javascript:__doPostBack(&#39;ctl00$btnSetSupportMode&#39;,&#39;&#39;)" id="btnSetSupportMode" style="height:0px;width:0px;z-index:-1000;Top:0px;Left:0px;position:absolute;" />
+<script type="text/javascript">
+//<![CDATA[
+var tvMain_ImageArray =  new Array('', '', '', '/Live/WebResource.axd?d=sunXRJ0VKM82VodqK63FPVO1CTB8d4uDVGFLa2SjmWXL-lUpMMIXYpDVkn0-vsqdGvk0EdBMfXiOZlrsbHmcsdPQjtXD_b7mJTbZ2CJnZJMsVRtfi790dvRYavS-1Ctr0&t=636768548402700171', '/Live/WebResource.axd?d=7lIt8AeoREJwX9u07JgndVFq5x3WEx5i7YiwKvNhuh5HogvAp8u8IgmcIwgKEPcm1TcoP9IkWK3oqn6r6Zb_r86e2Zenv5IvT1wuhFk063DUFRXBwgM5P5MGbUyytL6K0&t=636768548402700171', '/Live/WebResource.axd?d=xpOEPBf0yPtCjoeJHExOesn1P17iQLDCctnO3yW4r0jz06X_57Uj77By7NfeEIORt1_L1cO-BWBTuPOJzhEFQWEE6V7WUtTfOCPE1ASgrnNdmhFOBDcdVaZIAnHSn4KR0&t=636768548402700171');
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+shortcut.add("Ctrl+Alt+S", function () { $('#btnSetSupportMode').click(); });setTimeout('showTimeOutAlert();',1140000);var tvMain_Data = new Object();
+tvMain_Data.images = tvMain_ImageArray;
+tvMain_Data.collapseToolTip = "Collapse {0}";
+tvMain_Data.expandToolTip = "Expand {0}";
+tvMain_Data.expandState = theForm.elements['tvMain_ExpandState'];
+tvMain_Data.selectedNodeID = theForm.elements['tvMain_SelectedNode'];
+(function() {
+  for (var i=0;i<6;i++) {
+  var preLoad = new Image();
+  if (tvMain_ImageArray[i].length > 0)
+    preLoad.src = tvMain_ImageArray[i];
+  }
+})();
+//]]>
+</script>
+</form>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                initPage();
+                setFocusToError();
+            });
+
+            function initPage() {
+
+                if ($("#dvMobileActiveYearContainer").is(':visible'))
+                    $(".yearCombo").appendTo($("#dvMobileActiveYearContainer"));
+                $("#tvMain A").attr('tabindex', '1');
+                $(document).mousedown(function (e) {
+                    window.mouseXPos = e.pageX;
+                    window.mouseYPos = e.pageY;
+                });               
+            }
+
+            function setFocusToError() {
+
+                var lblAgreementApprovalMsg = $("#lblAgreementApprovalMsg");
+                if (lblAgreementApprovalMsg.length > 0) { //Validtion failed.
+                    $("#chkAgreementApproval").focus();
+                }
+
+            }
+
+        </script>
+    </div>
+    <div id="pleaseWaitWindow">
+        <div id="pleaseWaitWindowAnimation"></div>
+    </div>
+</body>
+</html>
+''';
+
 String courses2016a = r'''
 
 

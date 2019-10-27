@@ -1,38 +1,39 @@
 import 'package:bar_ilan/blocs/bloc.dart';
 import 'package:bar_ilan/models/schedule.dart';
-import 'package:bar_ilan/utils/html2widget.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:html/parser.dart' as parser;
-import 'package:bar_ilan/html.dart' as dom;
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ScheduleView extends StatefulWidget {
+  final List<Schedule> scheduleList;
+
+  ScheduleView(this.scheduleList);
+
   @override
   _ScheduleViewState createState() => _ScheduleViewState();
 }
 
 class _ScheduleViewState extends State<ScheduleView> {
   Response res;
-  List<Schedule> scheduleList;
   int selectedDay;
+  double swipeInitial;
+  double swipeDistance;
+  RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
+  bool showMsg = false;
+  int _activeIndex;
 
-  @override
-  void initState() {
-    super.initState();
-
-    // String eventTarget = r"ctl00$tbMain$ctl03$ddlPeriodTypeFilter2"; // semester 1, 2, 3
-    // String year =  r"ctl00$cmbActiveYear: 2017" // POST
-
-    scheduleList = Converter.scheduleList(parser
-        .parse(dom.courses2016a)
-        .querySelector("#ContentPlaceHolder1_gvPeriodSchedule")
-        .children[0]);
+  void _onRefresh() async {
+    Future.delayed(Duration(seconds: 1));
+    _refreshController.refreshCompleted();
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void _onLoading() async {
+    await Future.delayed((Duration(seconds: 1)));
+    setState(() {});
+
+    _refreshController.loadComplete();
   }
 
   @override
@@ -40,161 +41,257 @@ class _ScheduleViewState extends State<ScheduleView> {
     // If cached show old.
     // if logged in show data, else show message
 
+    Widget buildTile(String title, String trailing) {
+      return Container(
+        color: Theme.of(context).canvasColor,
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: ListTile(
+          title: Text(
+            title,
+            style: TextStyle(
+                color: (Theme.of(context).brightness == Brightness.dark)
+                    ? Colors.white
+                    : Colors.black),
+          ),
+          trailing: Text(
+            trailing,
+            style: TextStyle(
+                color: (Theme.of(context).brightness == Brightness.dark)
+                    ? Colors.white
+                    : Colors.black),
+          ),
+          dense: true,
+        ),
+      );
+    }
+
     selectedDay = Provider.of<Bloc>(context).scheduleLastSelection ??
         DateTime.now().weekday;
 
     var filteredList =
-        scheduleList.where((x) => x.dayOfWeek == selectedDay).toList();
+        widget.scheduleList.where((x) => x.dayOfWeek == selectedDay).toList();
 
-    var children = filteredList
-        .map(
-          (f) => Container(
-            color: f.meetingType == "Lecture"
-                ? ((Theme.of(context).brightness == Brightness.dark)
-                    ? Colors.green.withOpacity(.5)
-                    : Colors.green[300])
-                : ((Theme.of(context).brightness == Brightness.dark)
-                    ? Colors.red.withOpacity(.5)
-                    : Colors.red[300]),
-            child: InkWell(
-              onTap: () => showDialog(
-                  context: context,
-                  builder: (c) {
-                    return SimpleDialog(
-                      title: Center(
-                        child: Column(
-                          children: <Widget>[
-                            Text(f.courseName),
-                            Text(
-                              f.teacher,
-                              textScaleFactor: .75,
-                            )
-                          ],
-                        ),
-                      ),
-                      children: [
-                        ListTile(
-                          title: Text("Code"),
-                          trailing: Text(
-                            f.courseCode,
-                          ),
-                        ),
-                        ListTile(
-                          title: Text("Building"),
-                          trailing: Text(
-                            f.building.toString(),
-                          ),
-                        ),
-                        ListTile(
-                          title: Text("Room"),
-                          trailing: Text(
-                            f.room.toString(),
-                          ),
-                        ),
-                        ListTile(
-                          title: Text("Type"),
-                          trailing: Text(f.meetingType),
-                        ),
-                        ListTile(
-                          title: Text("Yearly hours"),
-                          trailing: Text(f.yearlyHours.toString()),
-                        ),
-                        ListTile(
-                          title: Text("Points"),
-                          trailing: Text(f.points.toString()),
-                        ),
-                        ListTile(
-                          title: Text("Period"),
-                          trailing: Text(f.period),
-                        ),
-                        ListTile(
-                          title: Text("Status"),
-                          trailing: Text(f.status == "\xA0" ? "???" : f.status),
-                        ),
-                        // ListTile(
-                        //   title: Text("Syllabus"),
-                        //   trailing: RaisedButton(
-                        //     child: Text(f.link == null
-                        //         ? "Unavailable"
-                        //         : "Fetch"),
-                        //     onPressed:
-                        //         (f.link == null) ? null : () => null,
-                        //   ),
-                        // ),
-                      ],
-                    );
-                  }),
-              child: ListTile(
-                leading: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(f.startTime.format(context)),
-                    Icon(Icons.arrow_downward),
-                    Text(f.endTime.format(context)),
-                  ],
-                ),
-                title: Text(f.courseName),
-                subtitle: Text(f.teacher),
-                trailing: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(f.building.toString()),
-                    Icon(Icons.location_on),
-                    Text(f.room.toString()),
-                  ],
-                ),
+    Widget buildDayOfWeek(String text, int weekday) {
+      return SizedBox(
+        width: 45,
+        child: Center(
+          child: FloatingActionButton(
+              heroTag: "DayOfWeekFAB" + weekday.toString(),
+              child: Text(
+                text,
+                textScaleFactor: (selectedDay != weekday) ? .9 : 1.1,
               ),
-            ),
-          ),
-        )
-        .toList();
-
-    if (children.length == 0) {
-      children.add(Container(
-        child: ListTile(
-          title: Text(
-            "Nothing",
-            textAlign: TextAlign.center,
-          ),
+              onPressed: () {
+                Provider.of<Bloc>(context).scheduleLastSelection = weekday;
+                setState(() => selectedDay = weekday);
+              },
+              backgroundColor:
+                  selectedDay == weekday ? Colors.amber : Colors.transparent,
+              foregroundColor: (widget.scheduleList
+                          .where((x) => x.dayOfWeek == weekday)
+                          .length ==
+                      0)
+                  ? (selectedDay == weekday
+                      ? Colors.black45
+                      : Theme.of(context).disabledColor)
+                  : (selectedDay == weekday ? Colors.black : Colors.white),
+              elevation: 0),
         ),
-      ));
-    } else {
-      for (var i = 0; i < filteredList.length - 1; i++) {
-        if (filteredList[i].endTime != filteredList[i + 1].startTime) {
-          children.insert(
-            i + 1,
-            Container(
-              color: Colors.blue,
-              child: ListTile(
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(filteredList[i].endTime.format(context)),
-                    Icon(Icons.chevron_right),
-                    Text("Window"),
-                    Icon(Icons.chevron_right),
-                    Text(filteredList[i + 1].startTime.format(context))
-                  ],
-                ),
-              ),
-            ),
-          );
-        }
-      }
+      );
     }
 
+    // #region build tree
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            child: ListView(
-              children: children,
+            child: SmartRefresher(
+              controller: _refreshController,
+              enablePullDown: true,
+              physics: filteredList.length == 0
+                  ? NeverScrollableScrollPhysics()
+                  : null,
+              header: WaterDropMaterialHeader(),
+              onRefresh: _onRefresh,
+              onLoading: _onLoading,
+              child: (filteredList.length != 0)
+                  ? ListView.separated(
+                      itemCount: filteredList.length,
+                      separatorBuilder: (context, idx) {
+                        for (var i = 0; i < filteredList.length - 1; i++) {
+                          if (filteredList[i].endTime !=
+                              filteredList[i + 1].startTime) {
+                            return Container(
+                              color: Colors.blue[800],
+                              child: ListTile(
+                                title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      filteredList[i].endTime.format(context),
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Icon(
+                                      Icons.chevron_right,
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      "Window",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Icon(Icons.chevron_right,
+                                        color: Colors.white),
+                                    Text(
+                                      filteredList[i + 1]
+                                          .startTime
+                                          .format(context),
+                                      style: TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          }
+                        }
+                        return Container();
+                      },
+                      itemBuilder: (context, idx) {
+                        return Theme(
+                          data: Theme.of(context).copyWith(
+                            cardColor:
+                                ((filteredList[idx].meetingType == "Lecture" || filteredList[idx].meetingType == "הרצאה")
+                                    ? Colors.pink[800]
+                                    : Colors.deepOrange[800]),
+                            disabledColor: Colors.white,
+                            textTheme: TextTheme(
+                                body1: TextStyle(color: Colors.white)),
+                          ),
+                          child: ExpansionPanelList(
+                            expansionCallback: (c, i) => setState(() {
+                              _activeIndex = _activeIndex == idx ? null : idx;
+                            }),
+                            children: [
+                              ExpansionPanel(
+                                canTapOnHeader: true,
+                                isExpanded: _activeIndex == idx,
+                                headerBuilder: (context, i) {
+                                  return ListTile(
+                                    leading: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(filteredList[idx]
+                                            .startTime
+                                            .format(context)),
+                                        Icon(Icons.arrow_downward, color: Colors.white,),
+                                        Text(filteredList[idx]
+                                            .endTime
+                                            .format(context)),
+                                      ],
+                                    ),
+                                    title: Text(filteredList[idx].courseName),
+                                    subtitle: Text(
+                                        (filteredList[idx].teacher != "")
+                                            ? filteredList[idx].teacher
+                                            : "TBD"),
+                                    trailing: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(filteredList[idx]
+                                            .building
+                                            .toString()),
+                                        Icon(Icons.location_on, color: Colors.white,),
+                                        Text(filteredList[idx].room.toString()),
+                                      ],
+                                    ),
+                                  );
+                                },
+                                body: Column(
+                                  children: <Widget>[
+                                    buildTile(
+                                      "Code",
+                                      filteredList[idx].courseCode,
+                                    ),
+                                    buildTile(
+                                      "Type",
+                                      filteredList[idx].meetingType,
+                                    ),
+                                    buildTile(
+                                      "Yearly hours",
+                                      filteredList[idx].yearlyHours.toString(),
+                                    ),
+                                    buildTile(
+                                      "Points",
+                                      filteredList[idx].points.toString(),
+                                    ),
+                                    buildTile(
+                                      "Period",
+                                      filteredList[idx].period,
+                                    ),
+                                    buildTile(
+                                      "Status",
+                                      filteredList[idx].status == "\xA0"
+                                          ? "Unknown"
+                                          : filteredList[idx].status,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    )
+                  : Stack(
+                      children: <Widget>[
+                        Ink.image(
+                          image: AssetImage("assets/rick_n_morty.png"),
+                          alignment: Alignment(-.2, 0),
+                          fit: BoxFit.cover,
+                          child: InkWell(
+                            onLongPress: () {
+                              setState(() {
+                                showMsg = !showMsg;
+                              });
+                              Future.delayed(Duration(milliseconds: 4000),
+                                  () => setState(() => showMsg = !showMsg));
+                            },
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 16,
+                          width: MediaQuery.of(context).size.width,
+                          child: Center(
+                            child: AnimatedDefaultTextStyle(
+                              child: Text(
+                                showMsg
+                                    ? "Glorious freedom!"
+                                    : "Nothing to see here",
+                                textScaleFactor: 2,
+                              ),
+                              style: !showMsg
+                                  ? TextStyle(color: Colors.transparent)
+                                  : TextStyle(color: Colors.white),
+                              duration: const Duration(milliseconds: 5000),
+                              curve: Curves.bounceInOut,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
             ),
           ),
           GestureDetector(
-            onHorizontalDragUpdate: (d) {
-              if (d.delta.dx > 1 && d.delta.dx < 1.15) {
+            onHorizontalDragStart: (DragStartDetails d) =>
+                swipeInitial = d.globalPosition.dx,
+            onHorizontalDragUpdate: (DragUpdateDetails d) =>
+                swipeDistance = d.globalPosition.dx - swipeInitial,
+            onHorizontalDragEnd: (DragEndDetails d) {
+              swipeInitial = 0;
+              if (swipeDistance > 0) {
                 setState(() {
                   if (selectedDay == 5) {
                     selectedDay = 7;
@@ -206,7 +303,7 @@ class _ScheduleViewState extends State<ScheduleView> {
                   Provider.of<Bloc>(context).scheduleLastSelection =
                       selectedDay;
                 });
-              } else if (d.delta.dx < -1 && d.delta.dx > -1.15) {
+              } else {
                 setState(() {
                   if (selectedDay == 1) {
                     selectedDay = 7;
@@ -222,19 +319,20 @@ class _ScheduleViewState extends State<ScheduleView> {
             },
             behavior: HitTestBehavior.translucent,
             child: Container(
-              height: 50,
+              height: 60,
               color: Theme.of(context).brightness == Brightness.dark
                   ? Colors.purple[800]
-                  : Colors.pink,
+                  : Colors.teal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  buildDayOfWeek(context, "Sun", 7),
-                  buildDayOfWeek(context, "Mon", 1),
-                  buildDayOfWeek(context, "Tue", 2),
-                  buildDayOfWeek(context, "Wed", 3),
-                  buildDayOfWeek(context, "Thu", 4),
-                  buildDayOfWeek(context, "Fri", 5),
+                  buildDayOfWeek("Sun", 7),
+                  buildDayOfWeek("Mon", 1),
+                  buildDayOfWeek("Tue", 2),
+                  buildDayOfWeek("Wed", 3),
+                  buildDayOfWeek("Thu", 4),
+                  buildDayOfWeek("Fri", 5),
+                  buildDayOfWeek("Sat", 6),
                 ],
               ),
             ),
@@ -242,28 +340,6 @@ class _ScheduleViewState extends State<ScheduleView> {
         ],
       ),
     );
-  }
-
-  Widget buildDayOfWeek(BuildContext context, String text, int weekday) {
-    return SizedBox(
-      width: 45,
-      child: Center(
-        child: FloatingActionButton(
-          child: Text(text),
-          onPressed: () {
-            Provider.of<Bloc>(context).scheduleLastSelection = weekday;
-            setState(() => selectedDay = weekday);
-          },
-          backgroundColor: selectedDay == weekday
-              ? Colors.amber.withOpacity(.5)
-              : Colors.transparent,
-          foregroundColor:
-              (scheduleList.where((x) => x.dayOfWeek == weekday).length == 0)
-                  ? Theme.of(context).disabledColor
-                  : Theme.of(context).textTheme.body1.color,
-          elevation: 0,
-        ),
-      ),
-    );
+// #endregion
   }
 }

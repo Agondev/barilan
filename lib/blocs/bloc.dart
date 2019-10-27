@@ -1,17 +1,18 @@
 import 'dart:io';
 import 'package:alice/alice.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Bloc with ChangeNotifier{
-  Bloc(this._preferences, this._dio, this._dir, this._alice,);
+  Bloc(this._preferences, this._dio, this._cache, this._dir, this.username, this.password, {this.alice});
 
   Directory _dir;
   Dio _dio;
-  Alice _alice;
+  DioCacheManager _cache;
+  Alice alice;
   SharedPreferences _preferences;
-  String _url = "https://inbar.biu.ac.il/Live";
 
   String _fullName = "Sign In";
   String username;
@@ -20,17 +21,17 @@ class Bloc with ChangeNotifier{
   String eventTarget;
   String error;
   Response response;
-  bool signedIn = false;
+  bool _isSignedIn = false;
 
   int scheduleLastSelection;
 
-  // String get username => _username;
-  // String get password => _password;
   SharedPreferences get prefs => _preferences;
   Dio get dio => _dio;
-  String get url => _url;
-  Alice get alice => _alice;
+  DioCacheManager get cache => _cache;
   Directory get dir => _dir;
+
+  bool get isSignedIn => _isSignedIn;
+  
   bool get isDarkTheme {
     if (_preferences.containsKey("isDark")) {
       _preferences.getBool("isDark");
@@ -50,6 +51,11 @@ class Bloc with ChangeNotifier{
     return _fullName;
   }
 
+  set isSignedIn(bool val) {
+    _isSignedIn = val;
+    notifyListeners();
+  }
+
   set fullName(String fn) {
     _preferences.setString("fullName", fn);
   }
@@ -59,7 +65,7 @@ class Bloc with ChangeNotifier{
     notifyListeners();
   }
   
-  set lang(bool isEng) {
+  set isEng(bool isEng) {
     _preferences.setBool("isEng", isEng);
     notifyListeners();
   }

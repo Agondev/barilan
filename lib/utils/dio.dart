@@ -2,136 +2,206 @@ import 'package:bar_ilan/blocs/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import 'package:html/parser.dart' as parser;
 import 'package:provider/provider.dart';
 
-var connectionErrorMessage = "Check your internet connection. Details:";
-String urlLogin = "/Login.aspx";
+// Global>>>
+// __EVENTTARGET: ctl00$cmbActiveYear
+// __EVENTTARGET: ctl00$ctl16
+// __EVENTTARGET: ctl00$ctl17
+// field>>>
+// ctl00$cmbActiveYear: 2019
+
+// pageSchedule>>>semester
+// __EVENTTARGET: ctl00$tbMain$ctl03$ddlPeriodTypeFilter2
+// ctl00$tbMain$ctl03$ddlPeriodTypeFilter2: 1
+// ctl00$tbMain$ctl03$ddlPeriodTypeFilter2: 2
+// ctl00$tbMain$ctl03$ddlPeriodTypeFilter2: 3
+
+// exams>period (1: all, 2: future, 3: past)
+// __EVENTTARGET: ctl00$tbMain$ctl03$ddlExamDateRangeFilter
+// ctl00$tbMain$ctl03$ddlExamDateRangeFilter: 1
+// all years
+// ctl00$tbMain$ctl03$chkPersonalAssignmentTerms: on
+
+const String baseUrl = "https://inbar.biu.ac.il/Live/";
+const String pageLogin = "Login.aspx";
+const String pageLogout = "Logout.aspx";
+const String pageSchedule = "StudentPeriodSchedule.aspx";
+const String pageGrades = "StudentGradesList.aspx";
+const String pageTerms = "StudentAssignmentTermList.aspx";
+
+const String argYear = r"ctl00$cmbActiveYear";
+const String argEng = r"ctl00$ctl17";
+const String argHeb = r"ctl00$ctl16";
+const String argSemester = r"ctl00$tbMain$ctl03$ddlPeriodTypeFilter2";
+
+Dio _dio;
+BuildContext _context;
+Response _response;
+var _connectionErrorMessage = "Can't connect to inbar.biu.ac.il.";
+
+String _username;
+String _password;
+String _event;
+String _page;
+
+var fields = Map<String, String>();
 
 Future<Response> ping(BuildContext context,
-    {String username,
-    String password,
-    String page,
-    String event,
-    int year}) async {
-  year = DateTime.now().year;
-  Dio dio = Provider.of<Bloc>(context).dio;
-  String url = Provider.of<Bloc>(context).url;
-  Response res;
-  var fields = Map<String, String>();
+    {String page = "", String event, bool refresh = false}) async {
+  _dio = Provider.of<Bloc>(context).dio;
+  _context = context;
+  _event = event;
+  _page = page;
+
+  _username = Provider.of<Bloc>(context).username;
+  _password = Provider.of<Bloc>(context).password;
+
+  // buildExamQuery-->get> all periods> all years?> paging???
+
   try {
-    if (page == null) {
-      res = await dio.get(url);
-    } else {
-      if (event == null) {
-        res = await dio.get(
-          url + page,
-          options: buildCacheOptions(
-            Duration(
-              days: 1,
-            ),
-            maxStale: Duration(days: 180),
-          ),
-        );
-      } else {
-        fields["__EVENTVALIDATION"] = parser
-            .parse(res?.data ?? "")
-            ?.querySelector("#__EVENTVALIDATION")
-            ?.attributes["value"];
-        fields["__EVENTTARGET"] = event;
-        res = await dio.post(url + page, data: fields);
-      }
+    if (_page.isEmpty) {
+      _response = await _dio.get(baseUrl);
     }
   } on DioError catch (e) {
+    print("dioError1");
     Provider.of<Bloc>(context).error =
-        connectionErrorMessage + "\n" + e.message;
+        _connectionErrorMessage + "\n" + e.message;
     return null;
   }
-  if (hasOrbitError(context, res)) {
+  if (hasError()) {
+    print("dioError2:"+_response.toString());
     return null;
   }
-  //ANCHOR OnLogin
-  if (parser.parse(res.data).getElementById("dvLoginPart") != null &&
-      username != null &&
-      password != null) {
-    fields["edtUsername"] = username;
-    fields["edtPassword"] = password;
-    try {
-      fields["__EVENTVALIDATION"] = parser
-          .parse(res?.data ?? "")
-          ?.querySelector("#__EVENTVALIDATION")
-          ?.attributes["value"];
-      fields["__PageDataKey"] = parser
-          .parse(res?.data ?? "")
-          ?.querySelector("#__PageDataKey")
-          ?.attributes["value"];
 
-      res = await dio.post(
-        url + urlLogin,
-        data: fields,
-        options: Options(
-          followRedirects: false,
-          validateStatus: (status) => status < 500,
+  if (!isLoggedIn()) {
+    print("dio2");
+    logIn();
+    print("dio3");
+  }
+
+  if (_event == null) {
+    print("dio4");
+    _response = await _dio.get(
+      baseUrl + page,
+      options: buildCacheOptions(
+        Duration(
+          days: 7,
         ),
-      );
-      var valid = true;
-      parser.parse(res.data).getElementsByTagName("script").forEach((e) {
-        if (e.text.contains("OLScriptCounter0alert")) {
-          Provider.of<Bloc>(context).error = "Wrong username or password";
-          valid = false;
-          return;
-        }
-      });
-      if (hasOrbitError(context, res) || !valid) {
-        return null;
-      }
-      FlutterSecureStorage().write(key: "username", value: username);
-      FlutterSecureStorage().write(key: "password", value: password);
-      res = await dio.get(url);
-      // get information here.
-      var yearsList = List<String>();
-      parser
-          .parse(res?.data)
-          .querySelector("#cmbActiveYear")
-          .children
-          .forEach((f) {
-        yearsList.add(f.text);
-      });
-      Provider.of<Bloc>(context).signedIn = true;
-      Provider.of<Bloc>(context)
-          .prefs
-          .setStringList("cmbActiveYear", yearsList);
-      Provider.of<Bloc>(context).fullName =
-          parser.parse(res?.data).querySelector("#lblUserFullName").text;
-    } on DioError catch (e) {
-      Provider.of<Bloc>(context).error =
-          connectionErrorMessage + "\n" + e.message;
-      return null;
-    } catch (e) {
-      throw Exception(e);
-    }
+        primaryKey: baseUrl + page,
+        maxStale: Duration(days: 180),
+        forceRefresh: refresh,
+      ),
+    );
+  } else {
+    // ANCHOR onPost
+    print("dio5");
+    populateFields();
+    _response = await _dio.post(
+      baseUrl + page,
+      data: fields,
+      options: buildCacheOptions(
+        Duration(days: 7),
+        maxStale: Duration(days: 180),
+      ),
+    );
   }
 
-  // build POST request with __EVENTTARGET (language)
-  // Hebrew ctl00$ctl16
-  // English ctl00$ctl17
+  print("dio6");
 
-  // GET main > https://inbar.biu.ac.il/Live/Main.aspx
-
-  // ctl00$cmbActiveYear
-  // scrape years: #cmbActiveYear > option
-
-  if (year != DateTime.now().year) {}
-
-  Provider.of<Bloc>(context).error = "";
-  return res;
+  Provider.of<Bloc>(context).error = null;
+  return _response;
 }
 
-bool hasOrbitError(BuildContext context, Response res) {
-  if (parser.parse(res.data).querySelector(".errorPagePanel") != null) {
-    Provider.of<Bloc>(context).error =
-        parser.parse(res.data).querySelector(".errorPagePanel").text;
+void populateFields() {
+  fields["edtUsername"] = _username;
+  fields["edtPassword"] = _password;
+  fields["__EVENTVALIDATION"] = parser
+      .parse(_response?.data ?? "")
+      ?.querySelector("#__EVENTVALIDATION")
+      ?.attributes["value"];
+  fields["__PageDataKey"] = parser
+      .parse(_response?.data ?? "")
+      ?.querySelector("#__PageDataKey")
+      ?.attributes["value"];
+  fields["__EVENTTARGET"] = _event;
+  fields[r"ctl00$cmbActiveYear"] = _event;
+  fields["tvMain_ExpandState"] = "nunnunnunnnnnunnnnnunununnnnnnnn";
+  // fields["tvMain_SelectedNode"] = "tvMainn0";
+  // fields["tvMain_SelectedNode"] = "tvMainn5";
+}
+
+Future<void> logIn() async {
+  print("login1");
+  populateFields();
+  print("login2");
+  try {
+    _response = await _dio.post(
+      baseUrl + pageLogin,
+      data: fields,
+      options: Options(
+        followRedirects: false,
+        validateStatus: (status) => status < 500,
+      ),
+    );
+    var valid = true;
+    print("login3");
+    parser.parse(_response.data).getElementsByTagName("script").forEach((e) {
+      if (e.text.contains("OLScriptCounter0alert")) {
+        Provider.of<Bloc>(_context).error = "Wrong username or password";
+        valid = false;
+      }
+    });
+    if (hasError() || !valid) {
+      return null;
+    }
+    print("login4");
+    fss.FlutterSecureStorage().write(key: "username", value: _username);
+    fss.FlutterSecureStorage().write(key: "password", value: _password);
+    _response = await _dio.get(baseUrl);
+    // get information here.
+    var yearsList = List<String>();
+    print("login5");
+    parser
+        .parse(_response?.data)
+        ?.querySelector("#cmbActiveYear")
+        ?.children
+        ?.forEach((f) {
+      yearsList.add(f?.text);
+    });
+    print("login6");
+    Provider.of<Bloc>(_context).prefs.setStringList("cmbActiveYear", yearsList);
+    Provider.of<Bloc>(_context).fullName =
+        parser.parse(_response?.data).querySelector("#lblUserFullName")?.text;
+    print('dio_success');
+  } on DioError catch (e) {
+    Provider.of<Bloc>(_context).error =
+        _connectionErrorMessage + "\n" + e.message;
+    return null;
+  } catch (e) {
+    throw Exception(e);
+  }
+}
+
+bool isLoggedIn() {
+  if (parser.parse(_response.data).getElementById("dvLoginPart") != null) {
+    Provider.of<Bloc>(_context).isSignedIn = false;
+    return false;
+  }
+  Provider.of<Bloc>(_context).isSignedIn = true;
+  return true;
+}
+
+bool hasError() {
+  if (_response == null) {
+    return true;
+  }
+  if (parser.parse(_response.data).querySelector(".errorPagePanel") != null) {
+    Provider.of<Bloc>(_context).error =
+        // #lblDescription
+        parser.parse(_response.data).querySelector(".errorPagePanel").text;
     return true;
   }
   return false;

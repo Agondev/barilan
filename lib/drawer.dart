@@ -1,3 +1,4 @@
+import 'package:bar_ilan/utils/dio.dart';
 import 'package:bar_ilan/views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,8 +10,6 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  String urlLogout = "/Logout.aspx";
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -21,15 +20,33 @@ class _MyDrawerState extends State<MyDrawer> {
                 color: Provider.of<Bloc>(context).isDarkTheme
                     ? Colors.purple
                     : Colors.amber),
-            child: (Provider.of<Bloc>(context).signedIn)
-                ? IconButton(
+            child: (Provider.of<Bloc>(context).isSignedIn)
+                ? FloatingActionButton.extended(
+                    label: Text(Provider.of<Bloc>(context).fullName),
                     icon: Icon(Icons.exit_to_app),
-                    onPressed: () {
-                      Provider.of<Bloc>(context)
-                        .dio
-                        .get(Provider.of<Bloc>(context).url + urlLogout);
-                        Provider.of<Bloc>(context).signedIn = false;
-                        setState(() => null);
+                    onPressed: () async {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: const Text("Logout?"),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: const Text("Cancel"),
+                                  onPressed: () =>
+                                      Navigator.of(context).pop(false),
+                                ),
+                                FlatButton(
+                                  child: const Text("Logout"),
+                                  onPressed: () {
+                                    ping(context, page: pageLogout);
+                                    Navigator.of(context).pop(true);
+                                  },
+                                ),
+                              ],
+                            );
+                          }).then((val) => val ? Navigator.pop(context) : null);
                     },
                   )
                 : FlatButton(
@@ -44,7 +61,6 @@ class _MyDrawerState extends State<MyDrawer> {
                       ],
                     ),
                     onPressed: () async {
-                      Navigator.pop(context);
                       await showDialog(
                           context: context,
                           builder: (_c) {
@@ -63,7 +79,11 @@ class _MyDrawerState extends State<MyDrawer> {
                 width: 100,
                 child: Switch(
                   value: Provider.of<Bloc>(context).isEng,
-                  onChanged: (val) => Provider.of<Bloc>(context).lang = !Provider.of<Bloc>(context).isEng,
+                  onChanged: (val) async {
+                    ping(context,
+                        event: (val) ? r"ctl00$ctl16" : r"ctl00$ctl17");
+                    Provider.of<Bloc>(context).isEng = !val;
+                  },
                 ),
               ),
               Text("English"),
@@ -82,7 +102,24 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
               Icon(Icons.brightness_3),
             ],
-          )
+          ),
+          // (kReleaseMode)
+          //     ? Container() :
+          ExpansionTile(
+            title: Text(Provider.of<Bloc>(context).error ?? "NoError"),
+            initiallyExpanded: true,
+            children: <Widget>[
+              Text(Provider.of<Bloc>(context).username ?? "NoUser"),
+              Text(Provider.of<Bloc>(context).password ?? "NoPass"),
+              Text(Provider.of<Bloc>(context).isSignedIn?.toString() ??
+                  "Signed Out"),
+              RaisedButton.icon(
+                icon: Icon(Icons.cached),
+                label: Text("Delete Cache"),
+                onPressed: () => Provider.of<Bloc>(context).cache.clearAll(),
+              )
+            ],
+          ),
         ],
       ),
     );

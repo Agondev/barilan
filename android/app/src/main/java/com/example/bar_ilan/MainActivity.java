@@ -1,4 +1,4 @@
-package com.example.bar_ilan;
+package nev.noga.ilanbar;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -9,12 +9,47 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  String result;
-  String username;
-  String password;
+  var _username = TextEditingController();
+  var _password = TextEditingController();
   bool enabled = true;
+  final focus = FocusNode();
+
+  @override
+  void dispose() {
+    _username.dispose();
+    _password.dispose();
+    focus.dispose();
+    super.dispose();
+  }
+
+  void submitForm() async {
+    if (_username.text.isEmpty || _password.text.isEmpty) {
+      return;
+    }
+
+    setState(() {
+      enabled = false;
+    });
+
+    print("1");
+
+    await ping(context);
+
+    print("2");
+
+    if (Provider.of<Bloc>(context).isSignedIn) {
+      Navigator.of(context).pop(true);
+      print("3");
+    }
+    setState(() {
+      enabled = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    _username.text = Provider.of<Bloc>(context).username;
+    _password.text = Provider.of<Bloc>(context).password;
     return Container(
       padding: EdgeInsets.all(25),
       child: Column(
@@ -24,7 +59,11 @@ class _LoginViewState extends State<LoginView> {
           Text("Username and password for inbar.biu.ac.il"),
           Divider(),
           TextField(
+            controller: _username,
             textAlign: TextAlign.center,
+            autocorrect: true,
+            autofocus: true,
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(
               alignLabelWithHint: true,
               hintText: "Username",
@@ -33,16 +72,18 @@ class _LoginViewState extends State<LoginView> {
                 Icons.ac_unit,
                 color: Colors.transparent,
               ),
-              errorText: (username != null && username.isEmpty)
+              errorText: ((_username?.text?.isEmpty) ?? false)
                   ? "Can't Be empty"
                   : null,
             ),
             textInputAction: TextInputAction.next,
-            onChanged: (t) => setState(() => username = t),
+            onSubmitted: (val) => FocusScope.of(context).requestFocus(focus),
           ),
           Divider(),
           TextField(
+            controller: _password,
             obscureText: true,
+            focusNode: focus,
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               alignLabelWithHint: true,
@@ -52,48 +93,27 @@ class _LoginViewState extends State<LoginView> {
                 Icons.ac_unit,
                 color: Colors.transparent,
               ),
-              errorText: (password != null && password.isEmpty)
-                  ? "Can't Be empty"
-                  : null,
+              errorText: (_password.text.isEmpty) ? "Can't Be empty" : null,
             ),
             textInputAction: TextInputAction.done,
-            onChanged: (t) => setState(() => password = t),
+            onEditingComplete: submitForm,
+            onSubmitted: (val) => focus.unfocus(),
           ),
-          Container(margin: EdgeInsets.only(top: 8),),
+          Container(
+            margin: EdgeInsets.only(top: 8),
+          ),
           RaisedButton(
             child: Text("Submit"),
             color: Colors.green,
-            onPressed: enabled
-                ? () async {
-                    if (username == null ||
-                        password == null ||
-                        username.isEmpty ||
-                        password.isEmpty) {
-                      setState(() {
-                        username = username ?? "";
-                        password = password ?? "";
-                      });
-                      return;
-                    }
-                    setState(() {
-                      enabled = false;
-                    });
-
-                    FocusScope.of(context).unfocus();
-
-                    await ping(context,
-                        password: password, username: username);
-
-                    // Check if ping result is successful. If yes, pop.
-
-                    setState(() {
-                      enabled = true;
-                    });
-                  }
-                : null,
+            onPressed: enabled ? submitForm : null,
           ),
-          Container(margin: EdgeInsets.only(top: 4),),
-          Text(Provider.of<Bloc>(context).error ?? "", style: TextStyle(color: Colors.red, fontWeight: FontWeight.w900),),
+          Container(
+            margin: EdgeInsets.only(top: 4),
+          ),
+          Text(
+            Provider.of<Bloc>(context).error ?? "",
+            style: TextStyle(color: Colors.red, fontWeight: FontWeight.w900),
+          ),
         ],
       ),
     );

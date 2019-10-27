@@ -4,8 +4,9 @@ class Exam {
   DateTime date;
   int dayOfWeek;
   TimeOfDay time;
-  int grade;
-  int finalGrade;
+  String dueTerm;
+  String grade;
+  String finalGrade;
   int building;
   int room;
   String period;
@@ -13,8 +14,8 @@ class Exam {
   String courseName;
   String teacher;
   String register;
-  String examNotebook;
-  String gradeAppeal;
+  String notebook;
+  String appeal;
   String notebookNumber;
   bool isFinal;
 
@@ -23,11 +24,12 @@ class Exam {
     this.courseCode,
     this.courseName,
     this.date,
+    this.dueTerm,
     this.dayOfWeek,
-    this.examNotebook,
+    this.notebook,
     this.grade,
     this.finalGrade,
-    this.gradeAppeal,
+    this.appeal,
     this.isFinal,
     this.notebookNumber,
     this.period,
