@@ -61,8 +61,15 @@ Future<Response> ping(BuildContext context,
 
   // buildExamQuery-->get> all periods> all years?> paging???
 
+  if (!isLoggedIn()) {
+    print("dio2");
+    logIn();
+    print("dio3");
+  }
+
   try {
     if (_page.isEmpty) {
+      print('dio1');
       _response = await _dio.get(baseUrl);
     }
   } on DioError catch (e) {
@@ -72,14 +79,8 @@ Future<Response> ping(BuildContext context,
     return null;
   }
   if (hasError()) {
-    print("dioError2:"+_response.toString());
+    print("dioError2:" + _response.toString());
     return null;
-  }
-
-  if (!isLoggedIn()) {
-    print("dio2");
-    logIn();
-    print("dio3");
   }
 
   if (_event == null) {
@@ -186,7 +187,7 @@ Future<void> logIn() async {
 }
 
 bool isLoggedIn() {
-  if (parser.parse(_response.data).getElementById("dvLoginPart") != null) {
+  if (_response?.data != null && parser.parse(_response?.data)?.getElementById("dvLoginPart") != null) {
     Provider.of<Bloc>(_context).isSignedIn = false;
     return false;
   }
@@ -196,6 +197,7 @@ bool isLoggedIn() {
 
 bool hasError() {
   if (_response == null) {
+    print("dioError_res_null");
     return true;
   }
   if (parser.parse(_response.data).querySelector(".errorPagePanel") != null) {

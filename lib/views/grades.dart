@@ -1,4 +1,4 @@
-import 'dart:async';
+import 'dart:async';  
 import 'package:bar_ilan/models/grade.dart';
 import 'package:bar_ilan/utils/dio.dart';
 import 'package:bar_ilan/utils/html2widget.dart';
@@ -101,7 +101,7 @@ class _GradesViewState extends State<GradesView> {
               future: gradesList,
               builder: (context, snap) {
                 if (snap.connectionState == ConnectionState.done) {
-                  print(snap.data);
+                  // print(snap.data);
                   if (snap.data == null) {
                     return Center(
                       child: Text("Error"),

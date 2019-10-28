@@ -1,5 +1,6 @@
 import 'package:bar_ilan/blocs/bloc.dart';
 import 'package:bar_ilan/models/schedule.dart';
+import 'package:bar_ilan/utils/style.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -41,26 +42,39 @@ class _ScheduleViewState extends State<ScheduleView> {
     // If cached show old.
     // if logged in show data, else show message
 
-    Widget buildTile(String title, String trailing) {
+    Widget buildTile(String title, String trailing,
+        {int building, String type, bool isRoom = false}) {
+      Color color = Theme.of(context).canvasColor;
+      if (building != null) {
+        color = building2color(building).withOpacity(.5);
+      } else if (type != null) {
+        color = meetingType2Color(type).withOpacity(.5);
+      } else if (isRoom) {
+        color = Colors.red.withOpacity(.25);
+      }
       return Container(
         color: Theme.of(context).canvasColor,
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: ListTile(
-          title: Text(
-            title,
-            style: TextStyle(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          color: color,
+          child: ListTile(
+            title: Text(
+              title,
+              style: TextStyle(
+                  color: (Theme.of(context).brightness == Brightness.dark)
+                      ? Colors.white
+                      : Colors.black),
+            ),
+            trailing: Text(
+              trailing,
+              style: TextStyle(
                 color: (Theme.of(context).brightness == Brightness.dark)
                     ? Colors.white
-                    : Colors.black),
+                    : Colors.black,
+              ),
+            ),
+            dense: true,
           ),
-          trailing: Text(
-            trailing,
-            style: TextStyle(
-                color: (Theme.of(context).brightness == Brightness.dark)
-                    ? Colors.white
-                    : Colors.black),
-          ),
-          dense: true,
         ),
       );
     }
@@ -83,7 +97,10 @@ class _ScheduleViewState extends State<ScheduleView> {
               ),
               onPressed: () {
                 Provider.of<Bloc>(context).scheduleLastSelection = weekday;
-                setState(() => selectedDay = weekday);
+                setState(() {
+                  selectedDay = weekday;
+                  _activeIndex = null;
+                });
               },
               backgroundColor:
                   selectedDay == weekday ? Colors.amber : Colors.transparent,
@@ -158,89 +175,119 @@ class _ScheduleViewState extends State<ScheduleView> {
                         return Container();
                       },
                       itemBuilder: (context, idx) {
-                        return Theme(
-                          data: Theme.of(context).copyWith(
-                            cardColor:
-                                ((filteredList[idx].meetingType == "Lecture" || filteredList[idx].meetingType == "הרצאה")
-                                    ? Colors.pink[800]
-                                    : Colors.deepOrange[800]),
-                            disabledColor: Colors.white,
-                            textTheme: TextTheme(
-                                body1: TextStyle(color: Colors.white)),
-                          ),
-                          child: ExpansionPanelList(
-                            expansionCallback: (c, i) => setState(() {
-                              _activeIndex = _activeIndex == idx ? null : idx;
-                            }),
-                            children: [
-                              ExpansionPanel(
-                                canTapOnHeader: true,
-                                isExpanded: _activeIndex == idx,
-                                headerBuilder: (context, i) {
-                                  return ListTile(
-                                    leading: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Text(filteredList[idx]
-                                            .startTime
-                                            .format(context)),
-                                        Icon(Icons.arrow_downward, color: Colors.white,),
-                                        Text(filteredList[idx]
-                                            .endTime
-                                            .format(context)),
-                                      ],
-                                    ),
-                                    title: Text(filteredList[idx].courseName),
-                                    subtitle: Text(
-                                        (filteredList[idx].teacher != "")
-                                            ? filteredList[idx].teacher
-                                            : "TBD"),
-                                    trailing: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Text(filteredList[idx]
-                                            .building
-                                            .toString()),
-                                        Icon(Icons.location_on, color: Colors.white,),
-                                        Text(filteredList[idx].room.toString()),
-                                      ],
-                                    ),
-                                  );
-                                },
-                                body: Column(
-                                  children: <Widget>[
-                                    buildTile(
-                                      "Code",
-                                      filteredList[idx].courseCode,
-                                    ),
-                                    buildTile(
-                                      "Type",
-                                      filteredList[idx].meetingType,
-                                    ),
-                                    buildTile(
-                                      "Yearly hours",
-                                      filteredList[idx].yearlyHours.toString(),
-                                    ),
-                                    buildTile(
-                                      "Points",
-                                      filteredList[idx].points.toString(),
-                                    ),
-                                    buildTile(
-                                      "Period",
-                                      filteredList[idx].period,
-                                    ),
-                                    buildTile(
-                                      "Status",
-                                      filteredList[idx].status == "\xA0"
-                                          ? "Unknown"
-                                          : filteredList[idx].status,
-                                    ),
+                        return Container(
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [
+                                    building2color(filteredList[idx].building),
+                                    meetingType2Color(
+                                        filteredList[idx].meetingType)
                                   ],
-                                ),
-                              )
-                            ],
+                                  begin: Alignment.centerRight,
+                                  end: Alignment.centerLeft,
+                                  stops: [.1, .5])),
+                          child: Theme(
+                            data: Theme.of(context).copyWith(
+                              cardColor: Colors.transparent,
+                              disabledColor: Colors.white,
+                              textTheme: TextTheme(
+                                  body1: TextStyle(color: Colors.white)),
+                            ),
+                            child: ExpansionPanelList(
+                              expansionCallback: (c, i) => setState(() {
+                                _activeIndex = _activeIndex == idx ? null : idx;
+                              }),
+                              children: [
+                                ExpansionPanel(
+                                  canTapOnHeader: true,
+                                  isExpanded: _activeIndex == idx,
+                                  headerBuilder: (context, i) {
+                                    return ListTile(
+                                      leading: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Text(filteredList[idx]
+                                              .startTime
+                                              .format(context)),
+                                          Icon(
+                                            Icons.arrow_downward,
+                                            color: Colors.white,
+                                          ),
+                                          Text(filteredList[idx]
+                                              .endTime
+                                              .format(context)),
+                                        ],
+                                      ),
+                                      title: Container(
+                                        margin: EdgeInsets.only(right: 25),
+                                        child:
+                                            Text(filteredList[idx].courseName),
+                                      ),
+                                      subtitle: Text(
+                                          (filteredList[idx].teacher != "")
+                                              ? filteredList[idx].teacher
+                                              : "TBD"),
+                                      trailing: Container(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text(filteredList[idx]
+                                                .building
+                                                .toString()),
+                                            Icon(
+                                              Icons.location_on,
+                                              color: Colors.white,
+                                            ),
+                                            Text(filteredList[idx]
+                                                .room
+                                                .toString()),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  body: Column(
+                                    children: <Widget>[
+                                      buildTile(
+                                          "Type", filteredList[idx].meetingType,
+                                          type: filteredList[idx].meetingType),
+                                      buildTile("Building",
+                                          filteredList[idx].building.toString(),
+                                          building: filteredList[idx].building),
+                                      buildTile("Room",
+                                          filteredList[idx].room.toString(),
+                                          isRoom: true),
+                                      buildTile(
+                                        "Code",
+                                        filteredList[idx].courseCode,
+                                      ),
+                                      buildTile(
+                                        "Yearly hours",
+                                        filteredList[idx]
+                                            .yearlyHours
+                                            .toString(),
+                                      ),
+                                      buildTile(
+                                        "Points",
+                                        filteredList[idx].points.toString(),
+                                      ),
+                                      buildTile(
+                                        "Period",
+                                        filteredList[idx].period,
+                                      ),
+                                      buildTile(
+                                        "Status",
+                                        filteredList[idx].status == "\xA0"
+                                            ? "Unknown"
+                                            : filteredList[idx].status,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         );
                       },
@@ -300,6 +347,7 @@ class _ScheduleViewState extends State<ScheduleView> {
                   } else {
                     selectedDay++;
                   }
+                  _activeIndex = null;
                   Provider.of<Bloc>(context).scheduleLastSelection =
                       selectedDay;
                 });
@@ -312,6 +360,7 @@ class _ScheduleViewState extends State<ScheduleView> {
                   } else {
                     selectedDay--;
                   }
+                  _activeIndex = null;
                   Provider.of<Bloc>(context).scheduleLastSelection =
                       selectedDay;
                 });

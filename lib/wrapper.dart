@@ -60,7 +60,10 @@ class _MyAppState extends State<MyApp> {
               onPressed: () => PermissionHandler().openAppSettings(),
             )
           ],
-          bottom: TabBar(tabs: tabs),
+          bottom: TabBar(
+            tabs: tabs,
+            indicatorWeight: 3,
+          ),
         ),
         body: TabBarView(
           children: <Widget>[
@@ -81,11 +84,11 @@ class _MyAppState extends State<MyApp> {
             // ),
             ScheduleView(
               Converter.scheduleList(
-                  parser
-                      .parse(courses2019a)
-                      .querySelector(".GridView")
-                      .children[0],
-                ),
+                parser
+                    .parse(courses2017a)
+                    .querySelector(".GridView")
+                    .children[0],
+              ),
             ),
             GradesView(),
             ExamsView(
