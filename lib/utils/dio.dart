@@ -2,7 +2,7 @@ import 'package:bar_ilan/blocs/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
+// import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import 'package:html/parser.dart' as parser;
 import 'package:provider/provider.dart';
 
@@ -25,22 +25,30 @@ import 'package:provider/provider.dart';
 // all years
 // ctl00$tbMain$ctl03$chkPersonalAssignmentTerms: on
 
-const String baseUrl = "https://inbar.biu.ac.il/Live/";
-const String pageLogin = "Login.aspx";
-const String pageLogout = "Logout.aspx";
-const String pageSchedule = "StudentPeriodSchedule.aspx";
-const String pageGrades = "StudentGradesList.aspx";
-const String pageTerms = "StudentAssignmentTermList.aspx";
+enum DioEvent {
+  NoUsernameOrPassword,
+  DioError,
+  OrbitError,
+  WrongUsernameOrPassword,
+  Logout,
+}
 
-const String argYear = r"ctl00$cmbActiveYear";
-const String argEng = r"ctl00$ctl17";
-const String argHeb = r"ctl00$ctl16";
-const String argSemester = r"ctl00$tbMain$ctl03$ddlPeriodTypeFilter2";
+const String dioBaseUrl = "https://inbar.biu.ac.il/Live/";
+const String dioPageLogin = "Login.aspx";
+const String dioPageLogout = "Logout.aspx";
+const String dioPageSchedule = "StudentPeriodSchedule.aspx";
+const String dioPageGrades = "StudentGradesList.aspx";
+const String dioPageTerms = "StudentAssignmentTermList.aspx";
+
+const String dioArgYear = r"ctl00$cmbActiveYear";
+const String dioArgEng = r"ctl00$ctl17";
+const String dioArgHeb = r"ctl00$ctl16";
+const String dioArgSemester = r"ctl00$tbMain$ctl03$ddlPeriodTypeFilter2";
 
 Dio _dio;
 BuildContext _context;
 Response _response;
-var _connectionErrorMessage = "Can't connect to inbar.biu.ac.il.";
+var _connectionErrorMessage = "Can't connect to " + dioBaseUrl;
 
 String _username;
 String _password;
@@ -59,39 +67,55 @@ Future<Response> ping(BuildContext context,
   _username = Provider.of<Bloc>(context).username;
   _password = Provider.of<Bloc>(context).password;
 
+  if (_username == null || _password == null) {
+    Provider.of<Bloc>(_context).error =
+        DioEvent.NoUsernameOrPassword.toString();
+    return Response(data: DioEvent.NoUsernameOrPassword);
+  }
+
+  // _username != null ? print("dioUsername: "+_username) : print("dioNoUsername");
+  // _username != null ? print("dioPassword: "+_password) : print("dioNoPassword");
+  // print("dioPage: "+_page);
+
   // buildExamQuery-->get> all periods> all years?> paging???
 
-  if (!isLoggedIn()) {
-    print("dio2");
-    logIn();
-    print("dio3");
+  if (page == dioPageLogout) {
+    Provider.of<Bloc>(context).isSignedIn = false;
+    Provider.of<Bloc>(context).error = DioEvent.Logout.toString();
+    return Response(data: DioEvent.Logout);
+  }
+
+  if (!_isLoggedIn()) {
+    print("dioIsLoggedInBefore");
+    _logIn();
+    print("dioIsLoggedInAfter");
   }
 
   try {
     if (_page.isEmpty) {
       print('dio1');
-      _response = await _dio.get(baseUrl);
+      _response = await _dio.get("");
     }
   } on DioError catch (e) {
     print("dioError1");
     Provider.of<Bloc>(context).error =
         _connectionErrorMessage + "\n" + e.message;
-    return null;
+    return Response(data: DioEvent.DioError);
   }
-  if (hasError()) {
+
+  if (_hasError()) {
     print("dioError2:" + _response.toString());
-    return null;
+    return Response(data: DioEvent.OrbitError);
   }
 
   if (_event == null) {
     print("dio4");
     _response = await _dio.get(
-      baseUrl + page,
+      page,
       options: buildCacheOptions(
         Duration(
           days: 7,
         ),
-        primaryKey: baseUrl + page,
         maxStale: Duration(days: 180),
         forceRefresh: refresh,
       ),
@@ -99,9 +123,9 @@ Future<Response> ping(BuildContext context,
   } else {
     // ANCHOR onPost
     print("dio5");
-    populateFields();
+    _populateFields();
     _response = await _dio.post(
-      baseUrl + page,
+      page,
       data: fields,
       options: buildCacheOptions(
         Duration(days: 7),
@@ -116,7 +140,7 @@ Future<Response> ping(BuildContext context,
   return _response;
 }
 
-void populateFields() {
+void _populateFields() {
   fields["edtUsername"] = _username;
   fields["edtPassword"] = _password;
   fields["__EVENTVALIDATION"] = parser
@@ -134,13 +158,13 @@ void populateFields() {
   // fields["tvMain_SelectedNode"] = "tvMainn5";
 }
 
-Future<void> logIn() async {
+Future<void> _logIn() async {
   print("login1");
-  populateFields();
+  _populateFields();
   print("login2");
   try {
     _response = await _dio.post(
-      baseUrl + pageLogin,
+      dioPageLogin,
       data: fields,
       options: Options(
         followRedirects: false,
@@ -151,17 +175,21 @@ Future<void> logIn() async {
     print("login3");
     parser.parse(_response.data).getElementsByTagName("script").forEach((e) {
       if (e.text.contains("OLScriptCounter0alert")) {
-        Provider.of<Bloc>(_context).error = "Wrong username or password";
         valid = false;
       }
     });
-    if (hasError() || !valid) {
-      return null;
+    if (!valid) {
+      Provider.of<Bloc>(_context).error =
+          DioEvent.WrongUsernameOrPassword.toString();
+      return Response(data: DioEvent.WrongUsernameOrPassword);
+    }
+    if (_hasError()) {
+      return Response(data: DioEvent.OrbitError);
     }
     print("login4");
-    fss.FlutterSecureStorage().write(key: "username", value: _username);
-    fss.FlutterSecureStorage().write(key: "password", value: _password);
-    _response = await _dio.get(baseUrl);
+    // fss.FlutterSecureStorage().write(key: "username", value: _username);
+    // fss.FlutterSecureStorage().write(key: "password", value: _password);
+    _response = await _dio.get("");
     // get information here.
     var yearsList = List<String>();
     print("login5");
@@ -180,31 +208,40 @@ Future<void> logIn() async {
   } on DioError catch (e) {
     Provider.of<Bloc>(_context).error =
         _connectionErrorMessage + "\n" + e.message;
-    return null;
+    return Response(data: DioEvent.DioError);
   } catch (e) {
     throw Exception(e);
   }
 }
 
-bool isLoggedIn() {
-  if (_response?.data != null && parser.parse(_response?.data)?.getElementById("dvLoginPart") != null) {
+bool _isLoggedIn() {
+  print("dioMethod_IsLoggedIn_Before");
+  if (_response?.data != null &&
+      parser.parse(_response?.data)?.getElementById("dvLoginPart") != null) {
+    print("dioMethod_IsLoggedIn_Middle");
+    print("res.data: " + _response.data);
     Provider.of<Bloc>(_context).isSignedIn = false;
     return false;
   }
+  print("dioMethod_IsLoggedIn_After");
   Provider.of<Bloc>(_context).isSignedIn = true;
   return true;
 }
 
-bool hasError() {
+bool _hasError() {
+  Provider.of<Bloc>(_context).isSignedIn = false;
   if (_response == null) {
     print("dioError_res_null");
     return true;
-  }
-  if (parser.parse(_response.data).querySelector(".errorPagePanel") != null) {
+  } else if (parser.parse(_response.data).querySelector(".errorPagePanel") !=
+      null) {
     Provider.of<Bloc>(_context).error =
         // #lblDescription
         parser.parse(_response.data).querySelector(".errorPagePanel").text;
     return true;
+  } else {
+    Provider.of<Bloc>(_context).error = DioEvent.OrbitError.toString();
+    Provider.of<Bloc>(_context).isSignedIn = true;
   }
   return false;
 }

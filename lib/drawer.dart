@@ -40,7 +40,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                 FlatButton(
                                   child: const Text("Logout"),
                                   onPressed: () {
-                                    ping(context, page: pageLogout);
+                                    ping(context, page: dioPageLogout);
                                     Navigator.of(context).pop(true);
                                   },
                                 ),
@@ -60,15 +60,19 @@ class _MyDrawerState extends State<MyDrawer> {
                         Icon(Icons.account_box),
                       ],
                     ),
-                    onPressed: () async {
-                      await showDialog(
-                          context: context,
-                          builder: (_c) {
-                            return Dialog(
-                              child: LoginView(),
-                            );
-                          });
-                    },
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SafeArea(
+                          child: Scaffold(
+                            appBar: AppBar(
+                              automaticallyImplyLeading: true,
+                            ),
+                            body: LoginView(),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
           ),
           Row(
@@ -111,8 +115,9 @@ class _MyDrawerState extends State<MyDrawer> {
             children: <Widget>[
               Text(Provider.of<Bloc>(context).username ?? "NoUser"),
               Text(Provider.of<Bloc>(context).password ?? "NoPass"),
-              Text(Provider.of<Bloc>(context).isSignedIn?.toString() ??
-                  "Signed Out"),
+              Text(Provider.of<Bloc>(context).isSignedIn
+                  ? "Signed in"
+                  : "Signed Out"),
               RaisedButton.icon(
                 icon: Icon(Icons.cached),
                 label: Text("Delete Cache"),

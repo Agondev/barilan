@@ -53,7 +53,8 @@ class Bloc with ChangeNotifier{
 
   set isSignedIn(bool val) {
     _isSignedIn = val;
-    notifyListeners();
+    print("setStignInSatus: " + val.toString());
+    // notifyListeners();
   }
 
   set fullName(String fn) {

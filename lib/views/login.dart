@@ -1,6 +1,7 @@
 import 'package:bar_ilan/blocs/bloc.dart';
 import 'package:bar_ilan/utils/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
@@ -31,15 +32,15 @@ class _LoginViewState extends State<LoginView> {
       enabled = false;
     });
 
-    print("1");
+    Provider.of<Bloc>(context).username = _username.text;
+    Provider.of<Bloc>(context).password = _password.text;
+    FlutterSecureStorage().write(key: "username", value: _username.text);
+    FlutterSecureStorage().write(key: "password", value: _password.text);
 
     await ping(context);
 
-    print("2");
-
     if (Provider.of<Bloc>(context).isSignedIn) {
       Navigator.of(context).pop(true);
-      print("3");
     }
     setState(() {
       enabled = true;

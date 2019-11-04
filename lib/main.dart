@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:alice/alice.dart';
 import 'package:bar_ilan/blocs/bloc.dart';
-import 'package:bar_ilan/utils/dio.dart' as prefix0;
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
@@ -12,6 +11,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'utils/dio.dart';
 import 'wrapper.dart';
 
 Future<void> main() async {
@@ -31,8 +31,8 @@ class AppWrapper extends StatefulWidget {
   final Directory dir;
   final SharedPreferences prefs;
   final Alice alice;
-  final Dio dio = Dio();
-  final DioCacheManager cache = DioCacheManager(CacheConfig(baseUrl: prefix0.baseUrl));
+  final Dio dio = Dio()..options.baseUrl = dioBaseUrl;
+  final DioCacheManager cache = DioCacheManager(CacheConfig(baseUrl: dioBaseUrl));
   final String username;
   final String password;
   AppWrapper(this.dir, this.prefs, this.username, this.password,

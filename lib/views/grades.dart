@@ -1,4 +1,5 @@
 import 'dart:async';  
+import 'package:bar_ilan/blocs/bloc.dart';
 import 'package:bar_ilan/models/grade.dart';
 import 'package:bar_ilan/utils/dio.dart';
 import 'package:bar_ilan/utils/html2widget.dart';
@@ -6,6 +7,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:html/parser.dart' as parser;
+import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:queries/collections.dart';
 
@@ -29,8 +31,12 @@ class _GradesViewState extends State<GradesView> {
 
   Future<List<Grade>> getGradesList({bool forceRefresh = false}) async {
     Response result =
-        await ping(context, page: pageGrades, refresh: forceRefresh);
+        await ping(context, page: dioPageGrades, refresh: forceRefresh);
     if (result == null) {
+      return null;
+    }
+    else if (result.data == DioEvent.NoUsernameOrPassword) {
+      print('test');
       return null;
     }
     return Collection(Converter.gradeList(parser
@@ -197,7 +203,7 @@ class _GradesViewState extends State<GradesView> {
                 } else if (snap.connectionState == ConnectionState.waiting || snap.connectionState == ConnectionState.active) {
                   return RefreshProgressIndicator();
                 }
-                return Center(child: Text("Unknown issue"),);
+                return Center(child: Text(Provider.of<Bloc>(context).error ?? "Unknown Error"),);
               },
             ),
           ),

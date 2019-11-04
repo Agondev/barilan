@@ -42,43 +42,6 @@ class _ScheduleViewState extends State<ScheduleView> {
     // If cached show old.
     // if logged in show data, else show message
 
-    Widget buildTile(String title, String trailing,
-        {int building, String type, bool isRoom = false}) {
-      Color color = Theme.of(context).canvasColor;
-      if (building != null) {
-        color = building2color(building).withOpacity(.5);
-      } else if (type != null) {
-        color = meetingType2Color(type).withOpacity(.5);
-      } else if (isRoom) {
-        color = Colors.red.withOpacity(.25);
-      }
-      return Container(
-        color: Theme.of(context).canvasColor,
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          color: color,
-          child: ListTile(
-            title: Text(
-              title,
-              style: TextStyle(
-                  color: (Theme.of(context).brightness == Brightness.dark)
-                      ? Colors.white
-                      : Colors.black),
-            ),
-            trailing: Text(
-              trailing,
-              style: TextStyle(
-                color: (Theme.of(context).brightness == Brightness.dark)
-                    ? Colors.white
-                    : Colors.black,
-              ),
-            ),
-            dense: true,
-          ),
-        ),
-      );
-    }
-
     selectedDay = Provider.of<Bloc>(context).scheduleLastSelection ??
         DateTime.now().weekday;
 
@@ -249,35 +212,34 @@ class _ScheduleViewState extends State<ScheduleView> {
                                     );
                                   },
                                   body: Column(
-                                    children: <Widget>[
-                                      buildTile(
+                                    children: <Widget>[ListTileItem(
                                           "Type", filteredList[idx].meetingType,
                                           type: filteredList[idx].meetingType),
-                                      buildTile("Building",
+                                      ListTileItem("Building",
                                           filteredList[idx].building.toString(),
                                           building: filteredList[idx].building),
-                                      buildTile("Room",
+                                      ListTileItem("Room",
                                           filteredList[idx].room.toString(),
                                           isRoom: true),
-                                      buildTile(
+                                      ListTileItem(
                                         "Code",
                                         filteredList[idx].courseCode,
                                       ),
-                                      buildTile(
+                                      ListTileItem(
                                         "Yearly hours",
                                         filteredList[idx]
                                             .yearlyHours
                                             .toString(),
                                       ),
-                                      buildTile(
+                                      ListTileItem(
                                         "Points",
                                         filteredList[idx].points.toString(),
                                       ),
-                                      buildTile(
+                                      ListTileItem(
                                         "Period",
                                         filteredList[idx].period,
                                       ),
-                                      buildTile(
+                                      ListTileItem(
                                         "Status",
                                         filteredList[idx].status == "\xA0"
                                             ? "Unknown"
@@ -390,5 +352,51 @@ class _ScheduleViewState extends State<ScheduleView> {
       ),
     );
 // #endregion
+  }
+}
+
+class ListTileItem extends StatelessWidget {
+  final String title, trailing, type;
+  final int building;
+  final bool isRoom;
+  
+  ListTileItem(this.title, this.trailing,
+        {this.building, this.type, this.isRoom = false});
+
+  @override
+  Widget build(BuildContext context) {
+    Color color = Theme.of(context).canvasColor;
+      if (building != null) {
+        color = building2color(building).withOpacity(.5);
+      } else if (type != null) {
+        color = meetingType2Color(type).withOpacity(.5);
+      } else if (isRoom) {
+        color = Colors.red.withOpacity(.25);
+      }
+      return Container(
+        color: Theme.of(context).canvasColor,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          color: color,
+          child: ListTile(
+            title: Text(
+              title,
+              style: TextStyle(
+                  color: (Theme.of(context).brightness == Brightness.dark)
+                      ? Colors.white
+                      : Colors.black),
+            ),
+            trailing: Text(
+              trailing,
+              style: TextStyle(
+                color: (Theme.of(context).brightness == Brightness.dark)
+                    ? Colors.white
+                    : Colors.black,
+              ),
+            ),
+            dense: true,
+          ),
+        ),
+      );
   }
 }
